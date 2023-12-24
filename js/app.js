@@ -4,7 +4,7 @@ console.log('test!');
 
 
 /*------------ Variables ------------*/
-
+let playerScore, currentQuestion, quizOver, letPerfectScore
 
 /*---- Cached Element References ----*/
 
@@ -14,14 +14,15 @@ console.log('test!');
 
 /*------------ Functions ------------*/
 
-
+// QUESTIONS
+// ** container vs div?
 
 // PSEUDOCODE
 // 1) Define the required variables used to track the state of the game - GAME STATE
-// -scorecard / player score - let playerScore 
-// -which question player is on - let currentQuestion
-// -final score / quiz complete - let quizOver (??Maybe not? Since there is no “win state”, only a finite amount of questions)
-// -(maybe separate action for PERFECT score - letPerfectScore)
+// // -scorecard / player score - let playerScore 
+// // -which question player is on - let currentQuestion
+// // -final score / quiz complete - let quizOver (??Maybe not? Since there is no “win state”, only a finite amount of questions)
+// // -(maybe separate action for PERFECT score - letPerfectScore)
 
 // 2) Store cached element references
 // 	-container for question & answers
