@@ -29,7 +29,8 @@ function updateScore(){
 
 
 
-
+//next:
+//click category, make tagline, rules, and category buttons disappear
 
 // QUESTIONS
 // ** container vs div?
@@ -50,8 +51,8 @@ function updateScore(){
 // 3) Upon loading, the game state should be initialized, and a function should be called to render this game state
 // // 	-init function - reset to beginning welcome page, reset score to 0
 // // 		-render function at end of init
-// 		-(possible to choose next category without resetting to the welcome page? I.e. continue onto another category from results page? Or too complex for me at the moment?)
-// 	-player will choose category, then hit “begin” button
+// 		-(ICEBOX) (possible to choose next category without resetting to the welcome page? I.e. continue onto another category from results page? Or too complex for me at the moment?)
+// // 	-player will choose category, then hit “begin” button - altered: category choice itself begins game, NO BEGIN BUTTON
 
 // 4) The state of the game should be rendered to the user
 // // 	-updateBoard (to display each new question)
@@ -65,7 +66,7 @@ function updateScore(){
 // 6) Event listeners
 // 	-handleClick with evt parameter
 // 		-play sound when selecting choices (diff sound for incorrect/correct)
-// 		-deduct points for incorrect answer
+// 		-(ICEBOX) deduct points for incorrect answer
 // 		-add points & move to next question upon correct answer	
 // 		-reset board, or go to next category
 
