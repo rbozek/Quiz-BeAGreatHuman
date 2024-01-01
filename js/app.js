@@ -15,6 +15,8 @@ const btnCategory1 = document.querySelector("#btn-category-1")
 // const btnCategory3 = document.querySelector("#btn-category-3")
 const questionContainer = document.querySelector
 ("#question-container")
+const playerScore = document.querySelector
+("#player-score")
 const btnReset = document.querySelector
 ("#btn-reset")
 
@@ -25,9 +27,6 @@ btnReset.addEventListener('click', reset)
 
 /*------------ Functions ------------*/
 function createQuestion(){
-  // const newQuestion = getNextQuestion()
-  // console.log(newQuestion.toString());
-  // getNextQuestion()
   console.log('createQuestion fxn');
   // console.log(getNextQuestion())
   questionContainer.innerHTML = ''
@@ -92,13 +91,16 @@ function updateScore(){
 
 //next:
 //get questions to print out in HTML
-//how to proceed to next object in arrya for questions
+// how to proceed to next object in array for questions
 //click category, make tagline, rules, and category buttons disappear
 
 
 
-// QUESTIONS
-// ** container vs div?
+// QUESTIONS - container vs div?
+
+
+
+// BELOW IS ORIGINAL PSEUDOCODE - the order i wrote things in ended up confusing me - i should have written in order of steps. making some big pivots in code so some are irrelevant - after i get basic functionality better, will come back & try to utilize some of these.
 
 // PSEUDOCODE
 // // 1) Define the required variables used to track the state of the game - GAME STATE
