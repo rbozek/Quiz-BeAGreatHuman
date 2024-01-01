@@ -4,19 +4,25 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="./css/style.css">
-  <script defer src="./js/app.js" type="module"></script>
+  <script src="./js/app.js" type="module"></script>
+  <!-- do NOT need "defer" here - use of module automatically defers -->
   <title>Be a Great Human</title>
 </head>
+
 <body>
   <h1>Quiz - Be a Better Human!</h1>
   <h2>Get through life without looking dumb (or dying)</h2>
   <div id="introDiv">"RULES WILL GO HERE"<br>
   Choose category to begin!</div>
-  <button id="category-1">Category 1</button>
-  <button id="category-2">Category 2</button>
-  <button id="category-3">Category 3</button>
+  <button id="btn-category-1">Category 1</button>
+  <button id="btn-category-2">Category 2</button>
+  <button id="btn-category-3">Category 3</button>
   
-  <div id="questionDiv">This is where the questions will pop up, maybe?</div>
+  <div id="question-container">This is where the questions will pop up, maybe?</div>
+
+  <button id="btn-reset">Reset Game</button>
+
+
 </body>
 </html>
 
