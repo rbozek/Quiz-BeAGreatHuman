@@ -2,12 +2,12 @@
 //array of objects
 const questions = [
   {
-    question: "What do you do etc etc?",
-    answers: { 
-      A: "be rude",
-      B: "be nice",
-      C: "be crude",
-      D: "be tude"
+    quesQs: "What do you do etc etc?",
+    quesAs: { 
+      A: "A - be rude",
+      B: "B - be nice",
+      C: "C - be crude",
+      D: "D - be tude"
     },
     correctAnswer: "B"
   },

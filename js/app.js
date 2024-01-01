@@ -6,37 +6,59 @@ import { questions } from "../js/questions.js"
 
 
 /*------------ Variables ------------*/
-let playerScore, currentQuestion, quizOver, letPerfectScore
+let currentQuestion, quizOver, letPerfectScore
 // const questions = []
 
 /*---- Cached Element References ----*/
 const btnCategory1 = document.querySelector("#btn-category-1")
 // const btnCategory2 = document.querySelector("#btn-category-2")
 // const btnCategory3 = document.querySelector("#btn-category-3")
-const questionContainer = document.querySelector
-("#question-container")
-const playerScore = document.querySelector
-("#player-score")
+const questionContainer = document.querySelector("#question-container")
+// const playerScore = document.querySelector("#player-score")
 const btnReset = document.querySelector
 ("#btn-reset")
 
 /*--------- Event Listeners ---------*/
-btnCategory1.addEventListener('click', createQuestion)
+btnCategory1.addEventListener('click', createQuestionsCat1)
 btnReset.addEventListener('click', reset)
 
 
 /*------------ Functions ------------*/
-function createQuestion(){
-  console.log('createQuestion fxn');
-  // console.log(getNextQuestion())
-  questionContainer.innerHTML = ''
-  console.log('render fxn works')
-  questions.forEach((ques,ans1,ans2,ans3,ans4) => {
-    printQuestion(ques,ans1,ans2,ans3,ans4)
-  })
-  // render()
+function createQuestionsCat1(){
+  // couldn't figure out this step, got from online ref:
+  const overallOutput = [];
+
+  questions.forEach((currentQuestion, questionNumber) => {
+
+    console.log(currentQuestion);
+    console.log(questionNumber);
+    // same deal, couldnt figure this out til I saw it:
+    // const answers = [];
+    
+    let eachQuestionDiv = document.createElement('div')
+    eachQuestionDiv.className = `each-question-div`
+
+    // why does this work? dont i need quotes or backticks?
+    let overallOutput
+    overallOutput.push(
+      'testing push'
+      // `<div class="question">  'test q' </div>
+      // <div class="answers">  test a </div>`
+      // `<div class="question"> ${currentQuestion.quesQs} test q </div>
+      // <div class="answers"> ${answers} test a </div>`
+    )
+    eachQuestionDiv.innerHTML = overallOutput
+
+    
+    questionContainer.appendChild(eachQuestionDiv)
+  }
+  )
+
+  // questionContainer.innerHTML = ''
+  // console.log('render fxn works')
 }
 
+//render function got rid of, prob unneccesary step
 // function render(){ 
 //   questionContainer.innerHTML = ''
 //   // questionContainer.innerHTML = 'render fxn'
@@ -47,21 +69,24 @@ function createQuestion(){
 //   })
 // }
 
-function printQuestion(ques,ans1,ans2,ans3,ans4){
-  console.log('printQuestion works')
-  // console.log(ques,ans1,ans2,ans3,ans4)
-  let questionDiv = document.createElement('div')
-  questionDiv.className = `question-div`
-  questionDiv.innerHTML = // `test inside questionDiv`
-  `<div>
-  <p>${ques}</p>
-  <p>${ans1}</p>
-  <p>${ans2}</p>
-  </div>`
-  console.log('printQuestion works')
-  questionContainer.appendChild(questionDiv)
-}
 
+// saved dead code - initial attempt at printing question, too complicated
+// function printQuestion(ques,ans1,ans2,ans3,ans4){
+//   console.log('printQuestion works')
+//   // console.log(ques,ans1,ans2,ans3,ans4)
+//   let questionDiv = document.createElement('div')
+//   questionDiv.className = `question-div`
+//   questionDiv.innerHTML = // `test inside questionDiv`
+//   `<div>
+//   <p>${ques}</p>
+//   <p>${ans1}</p>
+//   <p>${ans2}</p>
+//   </div>`
+//   console.log('printQuestion works')
+//   questionContainer.appendChild(questionDiv)
+// }
+
+// early attempt at populating Q&A's - not what i need
 // const singleQuestion = questions.map(){
 //   const transformedQuestion = { name: student, studentNum: index + 1, enrolled: true }
 //   return transformedQuestion
@@ -90,8 +115,8 @@ function updateScore(){
 
 
 //next:
-//get questions to print out in HTML
-// how to proceed to next object in array for questions
+//get questions to print out in HTML - MAJOR PIVOT from website help
+//eventually replace radio buttons with images
 //click category, make tagline, rules, and category buttons disappear
 
 
