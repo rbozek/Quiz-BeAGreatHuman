@@ -2,61 +2,113 @@ console.log('test!');
 
 /*------------ Constants ------------*/
 // import { getNextQuestion } from "../js/questions.js"
-import { questions } from "../js/questions.js"
+// import { questions } from "../js/questions.js"
+const questionsCat1 = [
+  {
+    quesQs: "What do you do etc etc?",
+    quesAs: { 
+      A: "A - be rude",
+      B: "B - be nice",
+      C: "C - be crude",
+      D: "D - be tude"
+    },
+    correctAnswer: "B"
+  },
+  {
+    question: "Question #2?",
+    answers: { 
+      A: "help people",
+      B: "hurt people",
+      C: "kill people",
+      D: "steal someones car"
+    },
+    correctAnswer: "A"
+  },
+  {
+    question: "Question #3?",
+    answers: { 
+      A: "bad friend",
+      B: "no friend",
+      C: "donut stealer",
+      D: "Good friend"
+    },
+    correctAnswer: "D"
+  },
+]
 
 
 /*------------ Variables ------------*/
-let currentQuestion, quizOver, letPerfectScore
-// const questions = []
+// let currentQuestion
+// let quizOver, letPerfectScore
 
 /*---- Cached Element References ----*/
 const btnCategory1 = document.querySelector("#btn-category-1")
 // const btnCategory2 = document.querySelector("#btn-category-2")
 // const btnCategory3 = document.querySelector("#btn-category-3")
 const questionContainer = document.querySelector("#question-container")
-// const playerScore = document.querySelector("#player-score")
-const btnReset = document.querySelector
-("#btn-reset")
+// const btnPlayerSubmit = document.querySelector("#player-submit")
+// const btnReset = document.querySelector("#btn-reset")
 
 /*--------- Event Listeners ---------*/
 btnCategory1.addEventListener('click', createQuestionsCat1)
-btnReset.addEventListener('click', reset)
+// btnPlayerSubmit.addEventListener('click', playerSubmit)
+// btnReset.addEventListener('click', reset)
 
 
 /*------------ Functions ------------*/
 function createQuestionsCat1(){
-  // couldn't figure out this step, got from online ref:
+  // blanked on this step, got idea from online ref:
   const overallOutput = [];
-
   questions.forEach((currentQuestion, questionNumber) => {
-
-    console.log(currentQuestion);
+    console.log(currentQuestion.quesQs);
+    console.log(currentQuestion.quesAs);
     console.log(questionNumber);
     // same deal, couldnt figure this out til I saw it:
     // const answers = [];
-    
-    let eachQuestionDiv = document.createElement('div')
-    eachQuestionDiv.className = `each-question-div`
-
-    // why does this work? dont i need quotes or backticks?
-    let overallOutput
+    // let eachQuestionDiv = document.createElement('div')
+    // eachQuestionDiv.className = `each-question-div`
+    // let overallOutput  
     overallOutput.push(
-      'testing push'
+      // 'testing push'
       // `<div class="question">  'test q' </div>
       // <div class="answers">  test a </div>`
-      // `<div class="question"> ${currentQuestion.quesQs} test q </div>
-      // <div class="answers"> ${answers} test a </div>`
+      `<div class="question"> ${currentQuestion.quesQs} test q </div>
+      <div class="answers"> ${currentQuestion.quesAs} test a </div>`
     )
-    eachQuestionDiv.innerHTML = overallOutput
-
-    
+    questionContainer.innerHTML = overallOutput
     questionContainer.appendChild(eachQuestionDiv)
-  }
-  )
-
+  })
   // questionContainer.innerHTML = ''
   // console.log('render fxn works')
 }
+
+
+// original, from 
+// function createQuestionsCat1(){
+//   // blanked on this step, got idea from online ref:
+//   const overallOutput = [];
+//   questions.forEach((currentQuestion, questionNumber) => {
+//     console.log(currentQuestion.quesQs);
+//     console.log(currentQuestion.quesAs);
+//     console.log(questionNumber);
+//     // same deal, couldnt figure this out til I saw it:
+//     // const answers = [];
+//     // let eachQuestionDiv = document.createElement('div')
+//     // eachQuestionDiv.className = `each-question-div`
+//     // let overallOutput  
+//     overallOutput.push(
+//       // 'testing push'
+//       // `<div class="question">  'test q' </div>
+//       // <div class="answers">  test a </div>`
+//       `<div class="question"> ${currentQuestion.quesQs} test q </div>
+//       <div class="answers"> ${currentQuestion.quesAs} test a </div>`
+//     )
+//     questionContainer.innerHTML = overallOutput
+//     questionContainer.appendChild(eachQuestionDiv)
+//   })
+//   // questionContainer.innerHTML = ''
+//   // console.log('render fxn works')
+// }
 
 //render function got rid of, prob unneccesary step
 // function render(){ 
@@ -112,16 +164,46 @@ function updateBoard(){
 function updateScore(){
 }
 
+//??
+//init function vs reset, not sure what elements needed for what here.
 
 
 //next:
-//get questions to print out in HTML - MAJOR PIVOT from website help
-//eventually replace radio buttons with images
-//click category, make tagline, rules, and category buttons disappear
+// move questions into app.js (big array of objects, each object k:v pairs)
+// ??CATEGORIES - separate question array for each??? (category1, category 2, etc)
+  // fix/finish createQuestionsCat1 to print questions & answers
+  // -> user will choose answers for ALL questions  (radio buttons best for now? - consider normal buttons)
+  // create "submit answers" button  ->  (cached el reference?) & event listener 
+  //  ->  loop thru submitted answers (one of k:v pairs from my objects) (for loop or forEach?) -> 
+  // add points to playerScore for correct answers -> compare playerChoice with correctAnswer, if === then add points, else then nothing
+  //  -> display playerScore
+
+// when user selects category, tagline, rules, & category buttons disappear -> at any point "reset" button starts us over
+// reset button - cached el & event listener & function - best way to reset to initial state?? (init function? seemed extra layer of complication)
+
+// -> do same setup for other categories & questions
+
+// timer for entire category, not each question
+// ** sounds: sound for button clicks, add sound for playerScore, and diff sound for perfect score  ->  button to turn off sounds??
+// ** images: favicon to page, monk image for top of page before game starts / (icebox, below - images replace radio buttons?)
+// color scheme: warm colors
+
+
+// LAST
+// assemble written questions from other computer doc
+// readme! 
 
 
 
-// QUESTIONS - container vs div?
+// ICEBOX OR ATTEMPT?
+// replace radio buttons with images
+// CATEGORIES -> after finishing 1st category & seeing score, user can proceed to the other categories & keep updating their total score
+// one question at a time instead of listing all at once ->  
+    // -> SCORE - each question responds immediately to user choice - max points for correct 1st guess, subtract points for each incorrect guess
+    // timer for each individual question
+// perfect score shows a secret page!
+
+
 
 
 
