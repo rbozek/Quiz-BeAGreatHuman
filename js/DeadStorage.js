@@ -3,42 +3,77 @@ could also do for   let score = 0  -> same idea, to keep adding to score
 render question method would put questions into (renderedQuestion)
 
 //array of objects
-const questions = [
+BENS ORIG IDEA - SWITCHING BACK TO THIS
+const questionsCat1 = [
   {
     quesQs: "What do you do etc etc?",
-    correctAnswerIdx: 1,
     quesAs: [ 
-      { answer1: 'be rude',
-      },
-      { answer2: 'be nice',
-      },
-      { answer3: 'be crude',
-      },
-      { answer4: 'be tude',
-      },
+      { answer1: 'be rude', correctAnswer: false },
+      { answer2: 'be nice', correctAnswer: true },
+      { answer3: 'be crude', correctAnswer: false },
+      { answer4: 'be tude', correctAnswer: false },
+    ]
+  },
+  {
+    quesQs: "QUestion 2, what's good to do??",
+    quesAs: [ 
+      { answer1: 'help people', correctAnswer: true },
+      { answer2: 'hurt people', correctAnswer: false },
+      { answer3: 'kill people', correctAnswer: false },
+      { answer4: 'steal someones car', correctAnswer: false },
+    ]
+  },
+  {
+    quesQs: "#3, who's a good person to have around?",
+    quesAs: [ 
+      { answer1: 'bad friend', correctAnswer: false },
+      { answer2: 'no friend', correctAnswer: false },
+      { answer3: 'donut stealer', correctAnswer: false },
+      { answer4: 'Good friend', correctAnswer: true },
     ]
   },
 ]
 
 
-BENS ORIG IDEA - cleaned up above
-{
-  quesQs: "What do you do etc etc?",
-  quesAs: [ 
-    { answer1: 'be rude',
-      correctAnswer: false;
-    },
-    { answer2: 'be nice',
-      correctAnswer: true;
-    },
-    { answer3: 'be crude',
-    correctAnswer: false;
-    },
-    { answer4: 'be tude',
-    correctAnswer: false;
-    },
-  ]
-}
+
+
+2nd method, cleaner but will make more problems later
+const questionsCat1 = [
+  {
+    quesQs: "What do you do etc etc?",
+    correctAnswerIdx: 1,
+    quesAs: [ 
+      { answer1: 'be rude' },
+      { answer2: 'be nice' },
+      { answer3: 'be crude' },
+      { answer4: 'be tude' },
+    ]
+  },
+  {
+    quesQs: "Question #2?",
+    correctAnswerIdx: 0,
+    quesAs: [ 
+      { answer1: 'help people' },
+      { answer2: 'hurt people' },
+      { answer3: 'kill people' },
+      { answer4: 'steal someones car' },
+    ]
+  },
+  {
+    quesQs: "Question #3?",
+    correctAnswerIdx: 3,
+    quesAs: [ 
+      { answer1: 'bad friend' },
+      { answer2: 'no friend' },
+      { answer3: 'donut stealer' },
+      { answer4: 'Good friend' },
+    ]
+  },
+]
+
+
+
+
 
 
 

@@ -6,40 +6,36 @@
 const questionsCat1 = [
   {
     quesQs: "What do you do etc etc?",
-    correctAnswerIdx: 1,
     quesAs: [ 
-      { answer1: 'be rude' },
-      { answer2: 'be nice' },
-      { answer3: 'be crude' },
-      { answer4: 'be tude' },
+      { answer1: 'be rude', correctAnswer: false },
+      { answer2: 'be nice', correctAnswer: true },
+      { answer3: 'be crude', correctAnswer: false },
+      { answer4: 'be tude', correctAnswer: false },
     ]
   },
   {
-    quesQs: "Question #2?",
-    correctAnswerIdx: 0,
+    quesQs: "QUestion 2, what's good to do??",
     quesAs: [ 
-      { answer1: 'help people' },
-      { answer2: 'hurt people' },
-      { answer3: 'kill people' },
-      { answer4: 'steal someones car' },
+      { answer1: 'help people', correctAnswer: true },
+      { answer2: 'hurt people', correctAnswer: false },
+      { answer3: 'kill people', correctAnswer: false },
+      { answer4: 'steal someones car', correctAnswer: false },
     ]
   },
   {
-    quesQs: "Question #3?",
-    correctAnswerIdx: 3,
+    quesQs: "#3, who's a good person to have around?",
     quesAs: [ 
-      { answer1: 'bad friend' },
-      { answer2: 'no friend' },
-      { answer3: 'donut stealer' },
-      { answer4: 'Good friend' },
+      { answer1: 'bad friend', correctAnswer: false },
+      { answer2: 'no friend', correctAnswer: false },
+      { answer3: 'donut stealer', correctAnswer: false },
+      { answer4: 'Good friend', correctAnswer: true },
     ]
   },
 ]
 
 
 /*------------ Variables ------------*/
-// let currentQuestion
-// let quizOver, letPerfectScore
+let currQuestionIdx, playerScore // use in init or render
 
 /*---- Cached Element References ----*/
 const btnCategory1 = document.querySelector("#btn-category-1")
@@ -58,28 +54,33 @@ btnCategory1.addEventListener('click', renderQuestionsCat1)
 /*------------ Functions ------------*/
 
 function renderQuestionsCat1() {
-  let currQuestionIdx=0 // later move to init or render?
-  let playerScore = 0 // later move to init or render?
-  console.log('create questions button works');
-  questionContainer.innerHTML = 'innerHTML works'
+
+  // console.log('create questions button works');
+  questionContainer.innerHTML = ''
+  // questionContainer.innerHTML = 'innerHTML works'
   questionsCat1.forEach(singleQuestion => {
+
     let renderedQuestion = document.createElement('div')
     renderedQuestion.textContent = `${singleQuestion.quesQs}`
     questionContainer.appendChild(renderedQuestion)
     console.log(singleQuestion.quesQs);
+
+
+    let renderedAnswer = document.createElement('div')
+    renderedAnswer.textContent = `${singleQuestion.quesAs.answer1}`
+    //next prob:  for above line ${singleQuestion.quesAs.forEach}
+
+    questionContainer.appendChild(renderedAnswer)
+    console.log(singleQuestion.quesAs[0]);
+    // let renderedAnswer = document.createElement('div')
+    // renderedAnswer.textContent = `${singleQuestion.quesAs[0].answer1}`
+    // questionContainer.appendChild(renderedAnswer)
+    // console.log(singleQuestion.quesAs[0]);
+
+
   })
   
-
 }
-
-// function updatePlayerInvDis() {
-  // player1InventoryEl.innerHTML = ''
-//   player1Inventory.weapons.forEach(weapon => {
-//     let weaponItem = document.createElement('li')
-//     weaponItem.textContent = `${weapon.name} : ${weapon.quantity}`
-//     player1InventoryEl.appendChild(weaponItem)
-//   })
-// }
 
 
 function init(){
