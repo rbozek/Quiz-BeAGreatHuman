@@ -8,42 +8,30 @@ const questionsCat1 = [
     quesQs: "What do you do etc etc?",
     correctAnswerIdx: 1,
     quesAs: [ 
-      { answer1: 'be rude',
-      },
-      { answer2: 'be nice',
-      },
-      { answer3: 'be crude',
-      },
-      { answer4: 'be tude',
-      },
+      { answer1: 'be rude' },
+      { answer2: 'be nice' },
+      { answer3: 'be crude' },
+      { answer4: 'be tude' },
     ]
   },
   {
     quesQs: "Question #2?",
     correctAnswerIdx: 0,
     quesAs: [ 
-      { answer1: 'help people',
-      },
-      { answer2: 'hurt people',
-      },
-      { answer3: 'kill people',
-      },
-      { answer4: 'steal someones car',
-      },
+      { answer1: 'help people' },
+      { answer2: 'hurt people' },
+      { answer3: 'kill people' },
+      { answer4: 'steal someones car' },
     ]
   },
   {
     quesQs: "Question #3?",
     correctAnswerIdx: 3,
     quesAs: [ 
-      { answer1: 'bad friend',
-      },
-      { answer2: 'no friend',
-      },
-      { answer3: 'donut stealer',
-      },
-      { answer4: 'Good friend',
-      },
+      { answer1: 'bad friend' },
+      { answer2: 'no friend' },
+      { answer3: 'donut stealer' },
+      { answer4: 'Good friend' },
     ]
   },
 ]
@@ -70,19 +58,28 @@ btnCategory1.addEventListener('click', renderQuestionsCat1)
 /*------------ Functions ------------*/
 
 function renderQuestionsCat1() {
-  let currQuestionIdx=0 // maybe inside init or render?
-  let playerScore = 0 // maybe inside init or render?
+  let currQuestionIdx=0 // later move to init or render?
+  let playerScore = 0 // later move to init or render?
   console.log('create questions button works');
   questionContainer.innerHTML = 'innerHTML works'
-  questionsCat1.forEach(function(){
-    console.log(questionsCat1.quesQs);
-    return questionsCat1.quesQs
+  questionsCat1.forEach(singleQuestion => {
+    let renderedQuestion = document.createElement('div')
+    renderedQuestion.textContent = `${singleQuestion.quesQs}`
+    questionContainer.appendChild(renderedQuestion)
+    console.log(singleQuestion.quesQs);
   })
-  // questionsCat1.forEach(function(){
-  //   console.log('quesAs');
-  // })
+  
+
 }
 
+// function updatePlayerInvDis() {
+  // player1InventoryEl.innerHTML = ''
+//   player1Inventory.weapons.forEach(weapon => {
+//     let weaponItem = document.createElement('li')
+//     weaponItem.textContent = `${weapon.name} : ${weapon.quantity}`
+//     player1InventoryEl.appendChild(weaponItem)
+//   })
+// }
 
 
 function init(){
