@@ -8,28 +8,28 @@ const questionsCat1 = [
   {
     quesQs: "What do you do etc etc?",
     quesAs: [ 
-      { answer1: 'be rude', correctAnswer: false },
-      { answer2: 'be nice', correctAnswer: true },
-      { answer3: 'be crude', correctAnswer: false },
-      { answer4: 'be tude', correctAnswer: false },
+      { answer: 'be rude', correctAnswer: false },
+      { answer: 'be nice', correctAnswer: true },
+      { answer: 'be crude', correctAnswer: false },
+      { answer: 'be tude', correctAnswer: false },
     ]
   },
   {
     quesQs: "QUestion 2, what's good to do??",
     quesAs: [ 
-      { answer1: 'help people', correctAnswer: true },
-      { answer2: 'hurt people', correctAnswer: false },
-      { answer3: 'kill people', correctAnswer: false },
-      { answer4: 'steal someones car', correctAnswer: false },
+      { answer: 'help people', correctAnswer: true },
+      { answer: 'hurt people', correctAnswer: false },
+      { answer: 'kill people', correctAnswer: false },
+      { answer: 'steal someones car', correctAnswer: false },
     ]
   },
   {
     quesQs: "#3, who's a good person to have around?",
     quesAs: [ 
-      { answer1: 'bad friend', correctAnswer: false },
-      { answer2: 'no friend', correctAnswer: false },
-      { answer3: 'donut stealer', correctAnswer: false },
-      { answer4: 'Good friend', correctAnswer: true },
+      { answer: 'bad friend', correctAnswer: false },
+      { answer: 'no friend', correctAnswer: false },
+      { answer: 'donut stealer', correctAnswer: false },
+      { answer: 'Good friend', correctAnswer: true },
     ]
   },
 ]

@@ -5,30 +5,30 @@
 // import { questions } from "../js/questions.js"
 const questionsCat1 = [
   {
-    quesQs: "What do you do etc etc question 1?",
+    quesQs: "What do you do etc etc?",
     quesAs: [ 
-      { answer1: 'be rude', correctAnswer: false },
-      { answer2: 'be nice', correctAnswer: true },
-      { answer3: 'be crude', correctAnswer: false },
-      { answer4: 'be tude', correctAnswer: false },
+      { answer: 'be rude', correctAnswer: false },
+      { answer: 'be nice', correctAnswer: true },
+      { answer: 'be crude', correctAnswer: false },
+      { answer: 'be tude', correctAnswer: false },
     ]
   },
   {
     quesQs: "QUestion 2, what's good to do??",
     quesAs: [ 
-      { answer1: 'help people', correctAnswer: true },
-      { answer2: 'hurt people', correctAnswer: false },
-      { answer3: 'kill people', correctAnswer: false },
-      { answer4: 'steal someones car', correctAnswer: false },
+      { answer: 'help people', correctAnswer: true },
+      { answer: 'hurt people', correctAnswer: false },
+      { answer: 'kill people', correctAnswer: false },
+      { answer: 'steal someones car', correctAnswer: false },
     ]
   },
   {
     quesQs: "#3, who's a good person to have around?",
     quesAs: [ 
-      { answer1: 'bad friend', correctAnswer: false },
-      { answer2: 'no friend', correctAnswer: false },
-      { answer3: 'donut stealer', correctAnswer: false },
-      { answer4: 'Good friend', correctAnswer: true },
+      { answer: 'bad friend', correctAnswer: false },
+      { answer: 'no friend', correctAnswer: false },
+      { answer: 'donut stealer', correctAnswer: false },
+      { answer: 'Good friend', correctAnswer: true },
     ]
   },
 ]
@@ -65,30 +65,28 @@ function renderQuestionsCat1() {
     renderedQuestion.textContent = `${singleQuestion.quesQs}`
     questionContainer.appendChild(renderedQuestion)
     // console.log(singleQuestion.quesQs + '--> renderQuestion works');
-
-    //next most likely:  for above line ${singleQuestion.quesAs.forEach}
-
-
-    let renderedAnswer = document.createElement('div')
-    renderedAnswer.textContent = `${singleQuestion.quesAs[0].answer1}`
-    questionContainer.appendChild(renderedAnswer)
-    console.log(singleQuestion.quesAs[0].answer1);
     
+    // HARD CODING for now - can clean up with for loop later
+    let renderedAnswer1 = document.createElement('div')
+    renderedAnswer1.textContent = `${singleQuestion.quesAs[0].answer}`
+    questionContainer.appendChild(renderedAnswer1)
+    console.log(singleQuestion.quesAs[0].answer);
 
+    let renderedAnswer2 = document.createElement('div')
+    renderedAnswer2.textContent = `${singleQuestion.quesAs[1].answer}`
+    questionContainer.appendChild(renderedAnswer2)
+    console.log(singleQuestion.quesAs[1].answer);
 
-    //     // save for now: if i'm printing each answer sep
-    // let renderedAnswer = document.createElement('div')
-    // renderedAnswer.textContent = `${singleQuestion.quesAs[0].answer1}`
-    // questionContainer.appendChild(renderedAnswer)
-    // console.log(singleQuestion.quesAs[0].answer1);
+    let renderedAnswer3 = document.createElement('div')
+    renderedAnswer3.textContent = `${singleQuestion.quesAs[2].answer}`
+    questionContainer.appendChild(renderedAnswer3)
+    console.log(singleQuestion.quesAs[2].answer);
 
-
-    // save for now: if i'm printing each answer sep
-
-
-
+    let renderedAnswer4 = document.createElement('div')
+    renderedAnswer4.textContent = `${singleQuestion.quesAs[3].answer}`
+    questionContainer.appendChild(renderedAnswer4)
+    console.log(singleQuestion.quesAs[3].answer);
   })
-  
 }
 
 

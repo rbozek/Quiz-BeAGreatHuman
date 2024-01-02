@@ -3,7 +3,7 @@
 
 
 //next:
-// move questions into app.js (big array of objects, each object k:v pairs)
+// // move questions into app.js (big array of objects, each object k:v pairs)
 // CATEGORIES - separate question array for each (category1, category 2, etc)
 // fix/finish createQuestionsCat1 to print questions & answers -> get question to print in console -> print HTML -> get answers to print in console > print HTML
 
