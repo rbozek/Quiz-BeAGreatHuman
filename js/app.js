@@ -24,51 +24,35 @@ const answers = document.getElementById("answers-ul")
 
 /*--------- Event Listeners ---------*/
 btnCategory1.addEventListener('click', renderQuestionCat1)
-// eachAnswer.addEventListener('click', playerChooseAnswer)
-
-// tried for loop, when I was adding CLASS to li's instead of ids
-// for (let idx = 0; idx < eachAnswer.length; idx++) {
-//     eachAnswer[idx].addEventListener('click', function() {
-//         console.log('eachAnswer ' + (idx) + ' clicked!');
-//       });
-//     }
 
 
-    /*------------ Functions ------------*/
-    function renderQuestionCat1() {
-      //create variable to hold just one specific question (indicated by currentQuesIdx)
-      const singleQuestion = questionsCat1[currentQuesIdx]
-      //then use that new variable to access the question & print it
-      question.textContent = `${singleQuestion.quesQs}`
-      
-      //create variable to hold all answers to given question - now this holds an array of objects
-      const answersToSingleQuestion = singleQuestion.quesAs
-      // console.log(answersToSingleQuestion);
-      
-      //loop through quesA's array, for each create LI & add text to LI & append LI to parent
-      answersToSingleQuestion.forEach((eachA) => {
-        let renderedAnswer = document.createElement('li')
-        
-        // initial attempty
-        // add class to each li:
-        // renderedAnswer.setAttribute('class', 'answer-li');
-        // OR id to each li
-        // renderedAnswer.setAttribute('id', 'answer-li');
-        
-        renderedAnswer.textContent = `${eachA.answer}`
-        answers.appendChild(renderedAnswer)
-        // console.log(renderedAnswer);
-      })
-      
-    
-      //loop will update GLOBAL currentQuesIdx for use! (there are a couple places we could place this - can also put it where we call the function)
-      for (let i = 0; i < questionsCat1.length; i++){
-        currentQuesIdx += 1
-        console.log(currentQuesIdx);
-      }
-    }
-    
-    
+/*------------ Functions ------------*/
+function renderQuestionCat1() {
+  //HOLDS ONE SPECIFIC QUESTION:
+  const singleQuestion = questionsCat1[currentQuesIdx]
+  question.textContent = `${singleQuestion.quesQs}`
+  
+  //HOLDS ARRAY OF ANSWERS:
+  const answersToSingleQuestion = singleQuestion.quesAs
+  // console.log(answersToSingleQuestion);
+  
+  //loop through quesA's 
+  answersToSingleQuestion.forEach((eachA) => {
+    let renderedAnswer = document.createElement('li')
+    renderedAnswer.textContent = `${eachA.answer}`
+    //can take advantage of bubbling by adding to container, but keeping here for now:
+    renderedAnswer.addEventListener('click', playerChooseAnswer)
+    answers.appendChild(renderedAnswer)
+    // console.log(renderedAnswer);
+  })
+  
+  //loop to update GLOBAL currentQuesIdx - Ben recs: want to increment the currentQuesIdx only after a player has made a guess, not all at once like this
+  // for (let i = 0; i < questionsCat1.length; i++){
+  //   currentQuesIdx += 1
+  //   console.log(currentQuesIdx);
+}
+
+
 function playerChooseAnswer(){
   console.log('player choice click works');
 }

@@ -10,10 +10,12 @@
 // //   create variable for single question, use that variable to print Q
 // //   new varibale for array of answers, loop thru array & create LI, add text to LI, and append LI to parent UL
 // //   at bottom: for loop to affect global variable currentQuesIdx
+// // NOT DOING ANYMORE: create "submit answers" button  ->  (cached el reference?) & event listener 
+// // first thing - try to put questions back in sep data doc. (for proj requirement - or ask?)
 
-  // // NOT DOING ANYMORE: create "submit answers" button  ->  (cached el reference?) & event listener 
-
-  //first thing - try to put questions back in sep data doc. (for proj requirement - or ask?)
+// from engineering thread in Slack: 
+  // for "clicking answers" - add event listener at same time when answers are printed!
+  // move for loop to update global variable
 // get LI's clickable / - event listener for those
 // function for chooseAnswer - that's where we'll use conditional to see if it matches "true" from quesAs?
 // update playerScore - compare playerChoice with correctAnswer, if === then add points, else then nothing
