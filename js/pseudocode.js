@@ -17,13 +17,18 @@
   // // for "clicking answers" - add event listener at same time when answers are printed!
   // //  move for loop to update global variable
 // // get LI's clickable / - event listener for those
+
+
+1 - reset button issue
+2 - 
+
 // function for chooseAnswer - that's where we'll use conditional to see if it matches "true" from quesAs?
 // update playerScore - compare playerChoice with correctAnswer, if === then add points, else then nothing
   // & display playerScore
 // end-game scenario when a Category is finished! 
-// when user selects category, tagline, rules, & category buttons disappear -> at any point "reset" or init button starts us over
 
-// reset button / init
+// when user selects category, tagline, rules, & category buttons disappear -> at any point "reset" or init button starts us over
+  // reset button / init
 // timer for entire category, not each question
 
 // ** sounds: sound for button clicks, add sound for playerScore, and diff sound for perfect score  ->  button to turn off sounds??

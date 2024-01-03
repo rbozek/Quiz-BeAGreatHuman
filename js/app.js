@@ -6,24 +6,22 @@ const questionsCat1 = Object.values(questionsImportCat1);
 // console.log(questionsCat1); 
 
 
-
 /*------------ Variables ------------*/
 let playerScore // use in init or render
 let currentQuesIdx = 0
+
 
 /*---- Cached Element References ----*/
 const btnCategory1 = document.getElementById("btn-category-1")
   // otehr btnCategories will go here
 const question = document.getElementById("question-p")
 const answers = document.getElementById("answers-ul")
+const btnReset = document.getElementById("btn-reset")
 
-
-// const eachAnswer = document.getElementById("answer-li")
-// const eachAnswer = document.getElementsByClassName("answer-li")
-// console.log(eachAnswer);
 
 /*--------- Event Listeners ---------*/
 btnCategory1.addEventListener('click', renderQuestionCat1)
+btnReset.addEventListener('click', reset)
 
 
 /*------------ Functions ------------*/
@@ -49,7 +47,7 @@ function renderQuestionCat1() {
 
 function playerChooseAnswer(){
   currentQuesIdx += 1
-  if (currentQuesIdx <= questionsCat1.length){
+  if (currentQuesIdx >= questionsCat1.length){
     gameOverTest()
   }
   question.textContent = '' // this line isnt needed?
@@ -59,19 +57,20 @@ function playerChooseAnswer(){
   renderQuestionCat1()
 }
 
-
 function gameOverTest(){
   console.log('testing gameover state');
 }
 
 function init(){
+  console.log('reset button works');
   playerScore = 0
-  currQuestionIdx = 0
+  currQuestionIdx = 0  
+  // let indexReset = currQuestionIdx
+  // indexReset = 0
+
   // quizOver = false
   // letPerfectScore = false
-  // render()
 }
-// init()
 
 function reset(){
   init()
