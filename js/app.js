@@ -42,7 +42,6 @@ const btnCategory1 = document.querySelector("#btn-category-1")
 // const btnCategory2 = document.querySelector("#btn-category-2")
 // const btnCategory3 = document.querySelector("#btn-category-3")
 const questionContainer = document.querySelector("#question-container")
-// const btnPlayerSubmit = document.querySelector("#player-submit")
 // const btnReset = document.querySelector("#btn-reset")
 
 /*--------- Event Listeners ---------*/
@@ -60,12 +59,11 @@ function renderQuestionsCat1() {
   // questionContainer.innerHTML = 'innerHTML works'
 
   questionsCat1.forEach(singleQuestion => {
-
     let renderedQuestion = document.createElement('div')
     renderedQuestion.textContent = `${singleQuestion.quesQs}`
     questionContainer.appendChild(renderedQuestion)
     // console.log(singleQuestion.quesQs + '--> renderQuestion works');
-    
+
     // HARD CODING for now - can clean up with for loop later
     let renderedAnswer1 = document.createElement('div')
     renderedAnswer1.textContent = `${singleQuestion.quesAs[0].answer}`

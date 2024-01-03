@@ -5,13 +5,15 @@
 //next:
 // // move questions into app.js (big array of objects, each object k:v pairs)
 // CATEGORIES - separate question array for each (category1, category 2, etc)
-// fix/finish createQuestionsCat1 to print questions & answers -> get question to print in console -> print HTML -> get answers to print in console > print HTML
+// // fix/finish createQuestionsCat1 to print questions & answers -> get question to print in console -> print HTML -> get answers to print in console > print HTML
+
+  // // NOT DOING ANYMORE: create "submit answers" button  ->  (cached el reference?) & event listener 
 
 
-  // create "submit answers" button  ->  (cached el reference?) & event listener 
-  //  ->  loop thru submitted answers (one of k:v pairs from my objects) (for loop or forEach?) -> 
-  // add points to playerScore for correct answers -> compare playerChoice with correctAnswer, if === then add points, else then nothing
-  //  -> display playerScore
+
+//  ->  loop thru submitted answers (one of k:v pairs from my objects) (for loop or forEach?) -> 
+// add points to playerScore for correct answers -> compare playerChoice with correctAnswer, if === then add points, else then nothing
+//  -> display playerScore
 
 // when user selects category, tagline, rules, & category buttons disappear -> at any point "reset" button starts us over
 // reset button - cached el & event listener & function - best way to reset to initial state?? (init function? seemed extra layer of complication)
