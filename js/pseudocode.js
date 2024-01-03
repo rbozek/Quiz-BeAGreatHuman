@@ -5,30 +5,27 @@
 //next:
 // // move questions into app.js (big array of objects, each object k:v pairs)
 // CATEGORIES - separate question array for each (category1, category 2, etc)
-// fix/finish createQuestionCat1 to print questions & answers one at a time! - w Jackson's help
-  // created global varible for current question (outside)
-  // create variable for single question, use that variable to print Q
-  // new varibale for array of answers, loop thru array & create LI, add text to LI, and append LI to parent UL
-  // at bottom: for loop to affect global variable currentQuesIdx
+// // fix/finish createQuestionCat1 to print questions & answers one at a time! - w Jackson's help
+// //   created global varible for current question (outside)
+// //   create variable for single question, use that variable to print Q
+// //   new varibale for array of answers, loop thru array & create LI, add text to LI, and append LI to parent UL
+// //   at bottom: for loop to affect global variable currentQuesIdx
 
   // // NOT DOING ANYMORE: create "submit answers" button  ->  (cached el reference?) & event listener 
 
 // get LI's clickable / - event listener for those
 // function for chooseAnswer - that's where we'll use conditional to see if it matches "true" from quesAs?
-// 
+// update playerScore - compare playerChoice with correctAnswer, if === then add points, else then nothing
+  // & display playerScore
+// end-game scenario when a Category is finished! 
+// when user selects category, tagline, rules, & category buttons disappear -> at any point "reset" or init button starts us over
 
-
-// add points to playerScore for correct answers -> compare playerChoice with correctAnswer, if === then add points, else then nothing
-//  -> display playerScore
-
-// when user selects category, tagline, rules, & category buttons disappear -> at any point "reset" button starts us over
-// reset button - cached el & event listener & function - best way to reset to initial state?? (init function? seemed extra layer of complication)
-
-// -> do same setup for other categories & questions
-
+// reset button / init
 // timer for entire category, not each question
+
 // ** sounds: sound for button clicks, add sound for playerScore, and diff sound for perfect score  ->  button to turn off sounds??
 // ** images: favicon to page, monk image for top of page before game starts / (icebox, below - images replace radio buttons?)
+
 // color scheme: warm colors
 
 
