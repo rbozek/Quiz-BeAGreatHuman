@@ -43,8 +43,8 @@ const btnCategory1 = document.querySelector("#btn-category-1")
 // const btnCategory2 = document.querySelector("#btn-category-2")
 // const btnCategory3 = document.querySelector("#btn-category-3")
 // const questionContainer = document.querySelector("#question-container")
-const question = document.querySelector("#questionP")
-const answers = document.querySelector("#answersUl")
+const question = document.querySelector("#question-p")
+const answers = document.querySelector("#answers-ul")
 
 /*--------- Event Listeners ---------*/
 btnCategory1.addEventListener('click', renderQuestionCat1)
@@ -53,7 +53,6 @@ btnCategory1.addEventListener('click', renderQuestionCat1)
 
 
 /*------------ Functions ------------*/
-
 function renderQuestionCat1() {
   //create variable to hold just one specific question (indicated by currentQuesIdx)
   const singleQuestion = questionsCat1[currentQuesIdx]
@@ -71,7 +70,7 @@ function renderQuestionCat1() {
     answers.appendChild(renderedAnswer)
     // console.log(eachA);
   })
-  
+
   //loop will update GLOBAL currentQuesIdx for use! (there are a couple places we could place this - can also put it where we call the function)
   for (let i = 0; i < questionsCat1.length; i++){
     currentQuesIdx += 1

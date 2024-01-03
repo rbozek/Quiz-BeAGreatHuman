@@ -5,13 +5,19 @@
 //next:
 // // move questions into app.js (big array of objects, each object k:v pairs)
 // CATEGORIES - separate question array for each (category1, category 2, etc)
-// // fix/finish createQuestionsCat1 to print questions & answers -> get question to print in console -> print HTML -> get answers to print in console > print HTML
+// fix/finish createQuestionCat1 to print questions & answers one at a time! - w Jackson's help
+  // created global varible for current question (outside)
+  // create variable for single question, use that variable to print Q
+  // new varibale for array of answers, loop thru array & create LI, add text to LI, and append LI to parent UL
+  // at bottom: for loop to affect global variable currentQuesIdx
 
   // // NOT DOING ANYMORE: create "submit answers" button  ->  (cached el reference?) & event listener 
 
+// get LI's clickable / - event listener for those
+// function for chooseAnswer - that's where we'll use conditional to see if it matches "true" from quesAs?
+// 
 
 
-//  ->  loop thru submitted answers (one of k:v pairs from my objects) (for loop or forEach?) -> 
 // add points to playerScore for correct answers -> compare playerChoice with correctAnswer, if === then add points, else then nothing
 //  -> display playerScore
 
