@@ -13,6 +13,7 @@
 
   // // NOT DOING ANYMORE: create "submit answers" button  ->  (cached el reference?) & event listener 
 
+  //first thing - try to put questions back in sep data doc. (for proj requirement - or ask?)
 // get LI's clickable / - event listener for those
 // function for chooseAnswer - that's where we'll use conditional to see if it matches "true" from quesAs?
 // update playerScore - compare playerChoice with correctAnswer, if === then add points, else then nothing
