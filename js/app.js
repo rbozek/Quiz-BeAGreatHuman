@@ -29,11 +29,11 @@ btnCategory1.addEventListener('click', renderQuestionCat1)
 /*------------ Functions ------------*/
 function renderQuestionCat1() {
   //HOLDS ONE SPECIFIC QUESTION:
-  const singleQuestion = questionsCat1[currentQuesIdx]
-  question.textContent = `${singleQuestion.quesQs}`
+  let singleQuestion = questionsCat1[currentQuesIdx]
+  question.textContent = `${singleQuestion.quesQ}`
   
   //HOLDS ARRAY OF ANSWERS:
-  const answersToSingleQuestion = singleQuestion.quesAs
+  let answersToSingleQuestion = singleQuestion.quesAs
   // console.log(answersToSingleQuestion);
   
   //loop through quesA's 
@@ -45,16 +45,23 @@ function renderQuestionCat1() {
     answers.appendChild(renderedAnswer)
     // console.log(renderedAnswer);
   })
-  
-  //loop to update GLOBAL currentQuesIdx - Ben recs: want to increment the currentQuesIdx only after a player has made a guess, not all at once like this
-  // for (let i = 0; i < questionsCat1.length; i++){
-  //   currentQuesIdx += 1
-  //   console.log(currentQuesIdx);
+}
+
+function playerChooseAnswer(){
+  currentQuesIdx += 1
+  if (currentQuesIdx <= questionsCat1.length){
+    gameOverTest()
+  }
+  question.textContent = '' // this line isnt needed?
+  answers.textContent = ''
+  console.log(currentQuesIdx);
+  console.log('player choice click works');
+  renderQuestionCat1()
 }
 
 
-function playerChooseAnswer(){
-  console.log('player choice click works');
+function gameOverTest(){
+  console.log('testing gameover state');
 }
 
 function init(){
@@ -69,6 +76,4 @@ function init(){
 function reset(){
   init()
 }
-
-
 

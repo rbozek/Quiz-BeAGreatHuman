@@ -13,10 +13,10 @@
 // // NOT DOING ANYMORE: create "submit answers" button  ->  (cached el reference?) & event listener 
 // // first thing - try to put questions back in sep data doc. (for proj requirement - or ask?)
 
-// from engineering thread in Slack: 
-  // for "clicking answers" - add event listener at same time when answers are printed!
-  // move for loop to update global variable
-// get LI's clickable / - event listener for those
+// // from engineering thread in Slack: 
+  // // for "clicking answers" - add event listener at same time when answers are printed!
+  // //  move for loop to update global variable
+// // get LI's clickable / - event listener for those
 // function for chooseAnswer - that's where we'll use conditional to see if it matches "true" from quesAs?
 // update playerScore - compare playerChoice with correctAnswer, if === then add points, else then nothing
   // & display playerScore
