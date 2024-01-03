@@ -45,13 +45,17 @@ function renderQuestionCat1() {
   })
 }
 
-function playerChooseAnswer(){
+function playerChooseAnswer(evt){
+  
+  // console.log(evt.target.textContent);
+
+
   currentQuesIdx += 1
   if (currentQuesIdx >= questionsCat1.length){
     gameOverTest()
   }
   question.textContent = '' // this line isnt needed?
-  answers.textContent = ''
+  answers.innerHTML = ''
   console.log(currentQuesIdx);
   console.log('player choice click works');
   renderQuestionCat1()
@@ -64,9 +68,7 @@ function gameOverTest(){
 function init(){
   console.log('reset button works');
   playerScore = 0
-  currQuestionIdx = 0  
-  // let indexReset = currQuestionIdx
-  // indexReset = 0
+  currentQuesIdx = 0  
 
   // quizOver = false
   // letPerfectScore = false
