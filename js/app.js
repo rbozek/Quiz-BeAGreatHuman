@@ -35,62 +35,54 @@ const questionsCat1 = [
 
 
 /*------------ Variables ------------*/
-let currQuestionIdx, playerScore // use in init or render
+let playerScore // use in init or render
+let currentQuesIdx = 0
 
 /*---- Cached Element References ----*/
 const btnCategory1 = document.querySelector("#btn-category-1")
 // const btnCategory2 = document.querySelector("#btn-category-2")
 // const btnCategory3 = document.querySelector("#btn-category-3")
-const questionContainer = document.querySelector("#question-container")
-// const btnReset = document.querySelector("#btn-reset")
+// const questionContainer = document.querySelector("#question-container")
+const question = document.querySelector("#questionP")
+const answers = document.querySelector("#answersUl")
 
 /*--------- Event Listeners ---------*/
-btnCategory1.addEventListener('click', renderQuestionsCat1)
+btnCategory1.addEventListener('click', renderQuestionCat1)
 // btnPlayerSubmit.addEventListener('click', playerSubmit)
 // btnReset.addEventListener('click', reset)
 
 
 /*------------ Functions ------------*/
 
-function renderQuestionsCat1() {
-  // console.log('create questions button works');
+function renderQuestionCat1() {
+  //create variable to hold just one specific question (indicated by currentQuesIdx)
+  const singleQuestion = questionsCat1[currentQuesIdx]
+  //then use that new variable to access the question & print it
+  question.textContent = `${singleQuestion.quesQs}`
 
-  questionContainer.innerHTML = ''
-  // questionContainer.innerHTML = 'innerHTML works'
+  //create variable to hold all answers to given question - now this holds an array of objects
+  const answersToSingleQuestion = singleQuestion.quesAs
+  // console.log(answersToSingleQuestion);
 
-  questionsCat1.forEach(singleQuestion => {
-    let renderedQuestion = document.createElement('div')
-    renderedQuestion.textContent = `${singleQuestion.quesQs}`
-    questionContainer.appendChild(renderedQuestion)
-    // console.log(singleQuestion.quesQs + '--> renderQuestion works');
-
-    // HARD CODING for now - can clean up with for loop later
-    let renderedAnswer1 = document.createElement('div')
-    renderedAnswer1.textContent = `${singleQuestion.quesAs[0].answer}`
-    questionContainer.appendChild(renderedAnswer1)
-    console.log(singleQuestion.quesAs[0].answer);
-
-    let renderedAnswer2 = document.createElement('div')
-    renderedAnswer2.textContent = `${singleQuestion.quesAs[1].answer}`
-    questionContainer.appendChild(renderedAnswer2)
-    console.log(singleQuestion.quesAs[1].answer);
-
-    let renderedAnswer3 = document.createElement('div')
-    renderedAnswer3.textContent = `${singleQuestion.quesAs[2].answer}`
-    questionContainer.appendChild(renderedAnswer3)
-    console.log(singleQuestion.quesAs[2].answer);
-
-    let renderedAnswer4 = document.createElement('div')
-    renderedAnswer4.textContent = `${singleQuestion.quesAs[3].answer}`
-    questionContainer.appendChild(renderedAnswer4)
-    console.log(singleQuestion.quesAs[3].answer);
+  //loop through quesA's array, for each create LI & add text to LI & append LI to parent
+  answersToSingleQuestion.forEach((eachA) => {
+    let renderedAnswer = document.createElement('li')
+    renderedAnswer.textContent = `${eachA.answer}`
+    answers.appendChild(renderedAnswer)
+    // console.log(eachA);
   })
+  
+  //loop will update GLOBAL currentQuesIdx for use! (there are a couple places we could place this - can also put it where we call the function)
+  for (let i = 0; i < questionsCat1.length; i++){
+    currentQuesIdx += 1
+  console.log(currentQuesIdx);
+  }
 }
 
 
 function init(){
-  playerScore = null
-  currQuestionIdx = null
+  playerScore = 0
+  currQuestionIdx = 0
   // quizOver = false
   // letPerfectScore = false
   // render()
@@ -101,9 +93,9 @@ function reset(){
   init()
 }
 
-function updateBoard(){
-}
+// function updateBoard(){
+// }
 
-function updateScore(){
-}
+// function updateScore(){
+// }
 

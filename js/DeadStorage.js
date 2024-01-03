@@ -124,65 +124,37 @@ export {
 
 
 
+function renderQuestionsCat1() {
+  // console.log('create questions button works');
 
+  questionContainer.innerHTML = ''
+  // questionContainer.innerHTML = 'innerHTML works'
 
-// original, from 
-// function createQuestionsCat1(){
-//   // blanked on this step, got idea from online ref:
-//   const overallOutput = [];
-//   questions.forEach((currentQuestion, questionNumber) => {
-//     console.log(currentQuestion.quesQs);
-//     console.log(currentQuestion.quesAs);
-//     console.log(questionNumber);
-//     // same deal, couldnt figure this out til I saw it:
-//     // const answers = [];
-//     // let eachQuestionDiv = document.createElement('div')
-//     // eachQuestionDiv.className = `each-question-div`
-//     // let overallOutput  
-//     overallOutput.push(
-//       // 'testing push'
-//       // `<div class="question">  'test q' </div>
-//       // <div class="answers">  test a </div>`
-//       `<div class="question"> ${currentQuestion.quesQs} test q </div>
-//       <div class="answers"> ${currentQuestion.quesAs} test a </div>`
-//     )
-//     questionContainer.innerHTML = overallOutput
-//     questionContainer.appendChild(eachQuestionDiv)
-//   })
-//   // questionContainer.innerHTML = ''
-//   // console.log('render fxn works')
-// }
+  questionsCat1.forEach(singleQuestion => {
+    let renderedQuestion = document.createElement('div')
+    renderedQuestion.textContent = `${singleQuestion.quesQs}`
+    questionContainer.appendChild(renderedQuestion)
+    // console.log(singleQuestion.quesQs + '--> renderQuestion works');
 
-//render function got rid of, prob unneccesary step
-// function render(){ 
-//   questionContainer.innerHTML = ''
-//   // questionContainer.innerHTML = 'render fxn'
-//   console.log('render fxn works')
-//   // console.log(getNextQuestion())
-//   questions.forEach((ques,ans1,ans2,ans3,ans4) => {
-//     printQuestion(ques,ans1,ans2,ans3,ans4)
-//   })
-// }
+    // HARD CODING for now - can clean up with for loop later
+    let renderedAnswer1 = document.createElement('div')
+    renderedAnswer1.textContent = `${singleQuestion.quesAs[0].answer}`
+    questionContainer.appendChild(renderedAnswer1)
+    console.log(singleQuestion.quesAs[0].answer);
 
+    let renderedAnswer2 = document.createElement('div')
+    renderedAnswer2.textContent = `${singleQuestion.quesAs[1].answer}`
+    questionContainer.appendChild(renderedAnswer2)
+    console.log(singleQuestion.quesAs[1].answer);
 
-// saved dead code - initial attempt at printing question, too complicated
-// function printQuestion(ques,ans1,ans2,ans3,ans4){
-//   console.log('printQuestion works')
-//   // console.log(ques,ans1,ans2,ans3,ans4)
-//   let questionDiv = document.createElement('div')
-//   questionDiv.className = `question-div`
-//   questionDiv.innerHTML = // `test inside questionDiv`
-//   `<div>
-//   <p>${ques}</p>
-//   <p>${ans1}</p>
-//   <p>${ans2}</p>
-//   </div>`
-//   console.log('printQuestion works')
-//   questionContainer.appendChild(questionDiv)
-// }
+    let renderedAnswer3 = document.createElement('div')
+    renderedAnswer3.textContent = `${singleQuestion.quesAs[2].answer}`
+    questionContainer.appendChild(renderedAnswer3)
+    console.log(singleQuestion.quesAs[2].answer);
 
-// early attempt at populating Q&A's - not what i need
-// const singleQuestion = questions.map(){
-//   const transformedQuestion = { name: student, studentNum: index + 1, enrolled: true }
-//   return transformedQuestion
-// }
+    let renderedAnswer4 = document.createElement('div')
+    renderedAnswer4.textContent = `${singleQuestion.quesAs[3].answer}`
+    questionContainer.appendChild(renderedAnswer4)
+    console.log(singleQuestion.quesAs[3].answer);
+  })
+}
