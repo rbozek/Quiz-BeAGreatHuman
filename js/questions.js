@@ -2,8 +2,8 @@ const questionsImportCat1 = [
   {
     quesQ: "What do you do question 1 etc etc?",
     quesAs: [ 
-      { answer: 'be rude', correctAnswer: false },
       { answer: 'be nice', correctAnswer: true },
+      { answer: 'be rude', correctAnswer: false },
       { answer: 'be crude', correctAnswer: false },
       { answer: 'be tude', correctAnswer: false },
     ]
@@ -11,8 +11,8 @@ const questionsImportCat1 = [
   {
     quesQ: "Question 2, what's good to do??",
     quesAs: [ 
-      { answer: 'help people', correctAnswer: true },
-      { answer: 'hurt people', correctAnswer: false },
+      { answer: 'help people', correctAnswer: false },
+      { answer: 'hurt people', correctAnswer: true },
       { answer: 'kill people', correctAnswer: false },
       { answer: 'steal someones car', correctAnswer: false },
     ]
@@ -22,8 +22,8 @@ const questionsImportCat1 = [
     quesAs: [ 
       { answer: 'bad friend', correctAnswer: false },
       { answer: 'no friend', correctAnswer: false },
-      { answer: 'donut stealer', correctAnswer: false },
-      { answer: 'Good friend', correctAnswer: true },
+      { answer: 'donut stealer', correctAnswer: true },
+      { answer: 'Good friend', correctAnswer: false },
     ]
   },
 ]

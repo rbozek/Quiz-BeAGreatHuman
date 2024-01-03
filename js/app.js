@@ -7,8 +7,10 @@ const questionsCat1 = Object.values(questionsImportCat1);
 
 
 /*------------ Variables ------------*/
-let playerScore // use in init or render
+let playerScore  // can reset in init or render
 let currentQuesIdx = 0
+let currQuesCorrAnsIdx  // for playerChooseAnswer
+
 
 
 /*---- Cached Element References ----*/
@@ -25,6 +27,7 @@ btnReset.addEventListener('click', reset)
 
 
 /*------------ Functions ------------*/
+
 function renderQuestionCat1() {
   //HOLDS ONE SPECIFIC QUESTION:
   let singleQuestion = questionsCat1[currentQuesIdx]
@@ -35,9 +38,19 @@ function renderQuestionCat1() {
   // console.log(answersToSingleQuestion);
   
   //loop through quesA's 
-  answersToSingleQuestion.forEach((eachA) => {
+  answersToSingleQuestion.forEach((eachA, index) => {
     let renderedAnswer = document.createElement('li')
     renderedAnswer.textContent = `${eachA.answer}`
+    
+    // similar solution to earlier this morning: likely not using
+    // renderedAnswer.id = eachA.correctAnswer
+
+    if (eachA.correctAnswer == true) {   // to log answer index for current question
+      console.log(eachA.correctAnswer);
+      currQuesCorrAnsIdx = index;     // ^^ global!!!
+      console.log(currQuesCorrAnsIdx);
+    }
+
     //can take advantage of bubbling by adding to container, but keeping here for now:
     renderedAnswer.addEventListener('click', playerChooseAnswer)
     answers.appendChild(renderedAnswer)
@@ -46,9 +59,12 @@ function renderQuestionCat1() {
 }
 
 function playerChooseAnswer(evt){
-  
-  // console.log(evt.target.textContent);
 
+  // if (){
+  // }
+
+  console.log(evt.target);
+  console.log(currQuesCorrAnsIdx);
 
   currentQuesIdx += 1
   if (currentQuesIdx >= questionsCat1.length){
@@ -56,7 +72,7 @@ function playerChooseAnswer(evt){
   }
   question.textContent = '' // this line isnt needed?
   answers.innerHTML = ''
-  console.log(currentQuesIdx);
+  // console.log(currentQuesIdx);
   console.log('player choice click works');
   renderQuestionCat1()
 }

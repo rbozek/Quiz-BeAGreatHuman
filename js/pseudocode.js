@@ -19,10 +19,7 @@
 // // get LI's clickable / - event listener for those
 
 
-1 - reset button issue
-2 - 
-
-// function for chooseAnswer - that's where we'll use conditional to see if it matches "true" from quesAs?
+// finish function for chooseAnswer - that's where we'll use conditional to see if it matches "true" from quesAs?
 // update playerScore - compare playerChoice with correctAnswer, if === then add points, else then nothing
   // & display playerScore
 // end-game scenario when a Category is finished! 
