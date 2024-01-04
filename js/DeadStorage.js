@@ -1,3 +1,14 @@
+// let startTimer = setInterval(function() {
+//     countdown.textContent = timeLeft + ' seconds remaining.'
+//     timeLeft -= 1
+//     if (timeLeft < 0) {
+//         countdownEl.textContent = 'Finished!'
+// 				confetti.start(500)
+//     }
+// }, 1000)
+
+
+
 let currQuestionIdx=0  ->  this would icnrement up as we go thru next questions
 could also do for   let score = 0  -> same idea, to keep adding to score
 render question method would put questions into (renderedQuestion)

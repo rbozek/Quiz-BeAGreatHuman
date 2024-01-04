@@ -7,13 +7,12 @@ const questionsCat2 = Object.values(questionsImportCat2);
 const questionsCat3 = Object.values(questionsImportCat3);
 // console.log(questionsCat1); 
 
-
 /*------------ Variables ------------*/
 let playerScore = 0  // can reset in init or render
 let currentQuesIdx = 0
 let currQuesCorrAnsIdx  // for playerChooseAnswer
 let currentCategory  // to fix problem in renderQUestion & playerCHoice
-let timeLeft = 80   // TIMER
+let timeLeft = 80  // TIMER
 let timerSeconds, timerInterval
 
 /*---- Cached Element References ----*/
@@ -40,15 +39,6 @@ btnReset.addEventListener('click', resetGame)
 
 /*------------ Functions ------------*/
 
-// let startTimer = setInterval(function() {
-//     countdown.textContent = timeLeft + ' seconds remaining.'
-//     timeLeft -= 1
-//     if (timeLeft < 0) {
-//         countdownEl.textContent = 'Finished!'
-// 				confetti.start(500)
-//     }
-// }, 1000)
-
 function startTimer() {
   // Reset the timer
   timerSeconds = 80;
@@ -63,7 +53,6 @@ function stopTimer() {
   // Clear the interval to stop the timer
   clearInterval(timerInterval);
 }
-
 
 function renderQuestionCat1() {
   rulesBtnDiv.style.display = 'none'

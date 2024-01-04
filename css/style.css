@@ -30,6 +30,10 @@ ul#answers-ul{
   color: #fff;
 }
 
+div#countdown {
+  background-color: rgb(255, 160, 66);
+}
+
 div#player-score {
   background-color: rgb(255, 160, 66);
 }

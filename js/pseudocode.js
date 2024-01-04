@@ -1,10 +1,8 @@
-//??
-//init function vs reset, not sure what elements needed for what here.
 
 
-//next:
+// //next:
 // // move questions into app.js (big array of objects, each object k:v pairs)
-// CATEGORIES - separate question array for each (category1, category 2, etc)
+// // CATEGORIES - separate question array for each (category1, category 2, etc)
 // // fix/finish createQuestionCat1 to print questions & answers one at a time! - w Jackson's help
 // //   created global varible for current question (outside)
 // //   create variable for single question, use that variable to print Q
@@ -29,9 +27,9 @@
 // // when user selects category, tagline, rules, & category buttons disappear -> at any point "reset" or init button starts us over
   // // reset button / init
 
-// PROBLEM - 'reset game' resets board, but then cant populate any new questions - probably has to do with TypeError that appears after I finish a category
-//   -line 99! I think ChatGPT came up with a gurd idear! (saved bookmark)
-// PROBLEM - FIXED!--I have "rulesBtnDiv.innerHTML" inside function ONLY FOR CATEGORY 1 - but for some reason it activates even if i'm using category 2 - im calling cat1() inside playerAnswer too! DAMMIT! how can i get that global? - FIXED!!! conditional 
+// // PROBLEM - 'reset game' resets board, but then cant populate any new questions - probably has to do with TypeError that appears after I finish a category
+// //   -line 99! I think ChatGPT came up with a gurd idear! (saved bookmark)
+// // PROBLEM - FIXED!--I have "rulesBtnDiv.innerHTML" inside function ONLY FOR CATEGORY 1 - but for some reason it activates even if i'm using category 2 - im calling cat1() inside playerAnswer too! DAMMIT! how can i get that global? - FIXED!!! conditional 
 
 -Check playerScore!! might be a little wonky
 
