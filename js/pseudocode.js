@@ -32,25 +32,17 @@
 // PROBLEM - 'reset game' resets board, but then cant populate any new questions - probably has to do with TypeError that appears after I finish a category
 //   -line 99! I think ChatGPT came up with a gurd idear! (saved bookmark)
 // PROBLEM - FIXED!--I have "rulesBtnDiv.innerHTML" inside function ONLY FOR CATEGORY 1 - but for some reason it activates even if i'm using category 2 - im calling cat1() inside playerAnswer too! DAMMIT! how can i get that global? - FIXED!!! conditional 
--Fix playerScore!! close but a little wonky
 
-  // timer for entire category, not each question
+-Check playerScore!! might be a little wonky
+
+// timer for entire category, not each question
 // ** sounds: sound for button clicks, add sound for playerScore, and diff sound for perfect score  ->  button to turn off sounds??
-// ** images: favicon to page, monk image for top of page before game starts / (icebox, below - images replace radio buttons?)
+// ** images: favicon to page DONE, monk image for top of page before game starts
 // color scheme: warm colors
 
-
-// ATTEMPTS
+// IF I HAVE TIME
+// seaprate "rules" & "buttons" - when user starts, everything disappears, but after a reset, only buttons re-appear
 // add conditional - if player got a perfect score, play hidden sound (or display hidden image)
-
-
-// ICEBOX OR ATTEMPT?
-// re-structure data OR functions to minimize repeated code 
-// CATEGORIES -> after finishing 1st category & seeing score, user can proceed to the other categories & keep updating their total score
-// SCORE - each question responds immediately to user choice - max points for correct 1st guess, subtract points for each incorrect guess
-// perfect score shows a secret page!
-
-
 
 
 

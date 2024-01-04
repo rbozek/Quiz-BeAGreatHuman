@@ -20,12 +20,10 @@ let timerSeconds, timerInterval
 const btnCategory1 = document.getElementById("btn-category-1")
 const btnCategory2 = document.getElementById("btn-category-2")
 const btnCategory3 = document.getElementById("btn-category-3")
-// const buttonsContainer = document.getElementById("buttons-container") // might have to go remove butons-container div
 const question = document.getElementById("question-p")
 const answers = document.getElementById("answers-ul")
 const btnReset = document.getElementById("btn-reset")
 const rulesBtnDiv = document.getElementById("rules-btn-container")
-// let initialState = rulesBtnDiv.innerHTML;  //  for eventual game reset
 const playerScoreContainer = document.getElementById("player-score")
 let initialScoreState = playerScoreContainer.innerHTML = `score`
 const countdown = document.getElementById("countdown")  // TIMER
@@ -37,23 +35,6 @@ btnCategory2.addEventListener('click', renderQuestionCat2)
 btnCategory2.addEventListener('click', startTimer)  // TIMER
 btnCategory3.addEventListener('click', renderQuestionCat3)
 btnCategory3.addEventListener('click', startTimer)  // TIMER
-
-
-  // TRYING IDEA, DIDNT WORK
-// buttonsContainer.addEventListener('click', handleCategoryClick);
-// function handleCategoryClick(evt) {
-//   if (evt.target.id === 'btn-category-1') {
-//       renderQuestionCat1();
-//       startTimer();
-//   } else if (evt.target.id === 'btn-category-2') {
-//       renderQuestionCat2();
-//       startTimer();
-//   } else if (evt.target.id === 'btn-category-3') {
-//       renderQuestionCat3();
-//       startTimer();
-//   }
-// }
-
 btnReset.addEventListener('click', resetGame)
 
 
@@ -87,7 +68,6 @@ function stopTimer() {
 function renderQuestionCat1() {
   rulesBtnDiv.style.display = 'none'
   currentCategory = 1 // to fix problem at end of playerChooseAnswer
-  console.log('renderQuestionCat1 works');
   let singleQuestion = questionsCat1[currentQuesIdx]    //HOLDS ONE SPECIFIC QUESTION:
   question.textContent = `${singleQuestion.quesQ}`
   let answersToSingleQuestion = singleQuestion.quesAs  //HOLDS ARRAY OF ANSWERS:
@@ -105,7 +85,7 @@ function renderQuestionCat1() {
 
 function renderQuestionCat2() {
   rulesBtnDiv.style.display = 'none'
-  currentCategory = 2 // to fix problem at end of playerChooseAnswer
+  currentCategory = 2
   let singleQuestion = questionsCat2[currentQuesIdx] 
   question.textContent = `${singleQuestion.quesQ}`
   let answersToSingleQuestion = singleQuestion.quesAs 
@@ -121,7 +101,7 @@ function renderQuestionCat2() {
 }
 function renderQuestionCat3() {
   rulesBtnDiv.style.display = 'none'
-  currentCategory = 3 // to fix problem at end of playerChooseAnswer
+  currentCategory = 3
   let singleQuestion = questionsCat3[currentQuesIdx]
   question.textContent = `${singleQuestion.quesQ}`
   let answersToSingleQuestion = singleQuestion.quesAs  
@@ -138,13 +118,15 @@ function renderQuestionCat3() {
 
 function playerChooseAnswer(evt){
   let selectedAnsIdx = Array.from(answers.children).indexOf(evt.target); // this line answers.children from ChatGPT!
-  playerScoreContainer.innerHTML = `Your score:<br>${ playerScore }`
   if (selectedAnsIdx == currQuesCorrAnsIdx){
     // console.log('correct answer selected');
     playerScore += 1
   } else  {
+    playerScore += 0
     // console.log('incorrect answer selected');
-  }  
+  }
+
+  playerScoreContainer.innerHTML = `Your score:<br>${ playerScore }`
 
   if (
     (currentCategory === 1 && currentQuesIdx < questionsCat1.length) ||
@@ -197,7 +179,5 @@ function resetGame(){
   playerScore = 0
   console.log(playerScore, currentQuesIdx);
   console.log('resetting game');
-
 }
-
 
