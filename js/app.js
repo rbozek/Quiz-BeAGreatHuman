@@ -7,7 +7,7 @@ const questionsCat1 = Object.values(questionsImportCat1);
 
 
 /*------------ Variables ------------*/
-let playerScore  // can reset in init or render
+let playerScore = 0  // can reset in init or render
 let currentQuesIdx = 0
 let currQuesCorrAnsIdx  // for playerChooseAnswer
 
@@ -19,6 +19,7 @@ const btnCategory1 = document.getElementById("btn-category-1")
 const question = document.getElementById("question-p")
 const answers = document.getElementById("answers-ul")
 const btnReset = document.getElementById("btn-reset")
+const playerScoreContainer = document.getElementById("player-score")
 
 
 
@@ -41,7 +42,7 @@ function renderQuestionCat1() {
     if (eachA.correctAnswer == true) {   // to log answer index for current question
       // console.log(eachA.correctAnswer);
       currQuesCorrAnsIdx = index;     // ^^ global!!!
-      console.log(currQuesCorrAnsIdx);
+      // console.log(currQuesCorrAnsIdx);
     }
     let renderedAnswer = document.createElement('li')
     renderedAnswer.textContent = `${eachA.answer}`
@@ -53,12 +54,11 @@ function renderQuestionCat1() {
 }
 
 function playerChooseAnswer(evt){
-    // console.log(evt.target);
-  // can ask Jurgen if there's time - i thought we figured it out using strings "true" & "false"? this method goes back to array numbers
   let selectedAnsIdx = Array.from(answers.children).indexOf(evt.target); // this line answers.children from ChatGPT!
   if (selectedAnsIdx == currQuesCorrAnsIdx){
     console.log('correct answer selected');
     playerScore += 1
+    playerScoreContainer.textContent = `${ playerScore }`
   } else  {
     console.log('incorrect answer selected');
   }  
@@ -80,9 +80,9 @@ function roundOver(){
 
 function init(){
   console.log('reset button works');
-  playerScore = 0
+  // playerScore = 0
+  // playerScoreContainer.textContent = `${playerScore}`
   currentQuesIdx = 0  
-
   // quizOver = false
   // letPerfectScore = false
 }
