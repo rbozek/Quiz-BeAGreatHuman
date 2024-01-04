@@ -13,7 +13,8 @@ let playerScore = 0  // can reset in init or render
 let currentQuesIdx = 0
 let currQuesCorrAnsIdx  // for playerChooseAnswer
 let currentCategory  // to fix problem in renderQUestion & playerCHoice
-
+let timeLeft = 80   // TIMER
+let timerSeconds, timerInterval
 
 /*---- Cached Element References ----*/
 const btnCategory1 = document.getElementById("btn-category-1")
@@ -26,16 +27,44 @@ const rulesBtnDiv = document.getElementById("rules-btn-container")
 let initialState = rulesBtnDiv.innerHTML;  //  for eventual game reset
 const playerScoreContainer = document.getElementById("player-score")
 let initialScoreState = playerScoreContainer.innerHTML;
-const countdown = document.getElementById("countdown")
+const countdown = document.getElementById("countdown")  // TIMER
 
 /*--------- Event Listeners ---------*/
 btnCategory1.addEventListener('click', renderQuestionCat1)
+btnCategory1.addEventListener('click', startTimer)  // TIMER
 btnCategory2.addEventListener('click', renderQuestionCat2)
+btnCategory2.addEventListener('click', startTimer)  // TIMER
 btnCategory3.addEventListener('click', renderQuestionCat3)
+btnCategory3.addEventListener('click', startTimer)  // TIMER
 btnReset.addEventListener('click', reset)
 
 
 /*------------ Functions ------------*/
+// let startTimer = setInterval(function() {
+//     countdown.textContent = timeLeft + ' seconds remaining.'
+//     timeLeft -= 1
+//     if (timeLeft < 0) {
+//         countdownEl.textContent = 'Finished!'
+// 				confetti.start(500)
+//     }
+// }, 1000)
+
+function startTimer() {
+  // Reset the timer
+  timerSeconds = 80;
+  // Set up the interval to update the timer every second
+  timerInterval = setInterval(updateTimer, 1000);
+}
+function updateTimer() {
+  countdown.textContent = `Time: ${timerSeconds}s`;
+  timerSeconds -= 1;
+}
+function stopTimer() {
+  // Clear the interval to stop the timer
+  clearInterval(timerInterval);
+}
+
+
 function renderQuestionCat1() {
   rulesBtnDiv.innerHTML = ''
   currentCategory = 1 // to fix problem at end of playerChooseAnswer
