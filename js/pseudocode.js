@@ -22,12 +22,15 @@
 // // finish function for chooseAnswer - that's where we'll use conditional to see if it matches "true" from quesAs?
 // // update playerScore - compare playerChoice with correctAnswer, if === then add points, else then nothing
   // // & display playerScore
-// end-game scenario when a Category is finished! 
+
+  QUESTIONS - smartest approach for duplicate answers piling up? (clear category buttons, 
+
+  // end-game scenario when a Category is finished! 
 
 // when user selects category, tagline, rules, & category buttons disappear -> at any point "reset" or init button starts us over
   // reset button / init
-// timer for entire category, not each question
 
+  // timer for entire category, not each question
 // ** sounds: sound for button clicks, add sound for playerScore, and diff sound for perfect score  ->  button to turn off sounds??
 // ** images: favicon to page, monk image for top of page before game starts / (icebox, below - images replace radio buttons?)
 
@@ -35,9 +38,10 @@
 
 
 // LAST
-// assemble written questions from other computer doc
 // readme! 
 
+// ATTEMPTS
+// add conditional - if player got a perfect score, play hidden sound (or display hidden image)
 
 
 // ICEBOX OR ATTEMPT?
