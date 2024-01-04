@@ -30,30 +30,23 @@
   // // reset button / init
 
 PROBLEM - 'reset game' resets board, but then cant populate any new questions
-  --I have "rulesBtnDiv.innerHTML" inside function ONLY FOR CATEGORY 1 - but for some reason it activates even if i'm using category 2 - im calling cat1() inside playerAnswer too! DAMMIT! how can i get that global? - FIXED!!!
+// PROBLEM - FIXED!--I have "rulesBtnDiv.innerHTML" inside function ONLY FOR CATEGORY 1 - but for some reason it activates even if i'm using category 2 - im calling cat1() inside playerAnswer too! DAMMIT! how can i get that global? - FIXED!!! conditional 
 
 
   // timer for entire category, not each question
 // ** sounds: sound for button clicks, add sound for playerScore, and diff sound for perfect score  ->  button to turn off sounds??
 // ** images: favicon to page, monk image for top of page before game starts / (icebox, below - images replace radio buttons?)
-
 // color scheme: warm colors
 
-
-// LAST
-// readme! 
 
 // ATTEMPTS
 // add conditional - if player got a perfect score, play hidden sound (or display hidden image)
 
 
 // ICEBOX OR ATTEMPT?
-// cleanup TypeError in console that occurs at the end of each round
-// replace radio buttons with images
+// re-structure data OR functions to minimize repeated code 
 // CATEGORIES -> after finishing 1st category & seeing score, user can proceed to the other categories & keep updating their total score
-// one question at a time instead of listing all at once ->  
-    // -> SCORE - each question responds immediately to user choice - max points for correct 1st guess, subtract points for each incorrect guess
-    // timer for each individual question
+// SCORE - each question responds immediately to user choice - max points for correct 1st guess, subtract points for each incorrect guess
 // perfect score shows a secret page!
 
 

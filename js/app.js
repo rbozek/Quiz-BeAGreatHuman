@@ -25,7 +25,7 @@ const btnReset = document.getElementById("btn-reset")
 const rulesBtnDiv = document.getElementById("rules-btn-container")
 let initialState = rulesBtnDiv.innerHTML;  //  for eventual game reset
 const playerScoreContainer = document.getElementById("player-score")
-
+let initialScoreState = playerScoreContainer.innerHTML;
 
 /*--------- Event Listeners ---------*/
 btnCategory1.addEventListener('click', renderQuestionCat1)
@@ -35,10 +35,7 @@ btnReset.addEventListener('click', reset)
 
 
 /*------------ Functions ------------*/
-
 function renderQuestionCat1() {
-  // rulesBtnDiv.innerHTML = '' // if I want to make entire top section disappear
-  // btnCategory1.style.display = "none"; // if i want to make this individual button disappear
   currentCategory = 1 // to fix problem at end of playerChooseAnswer
   let singleQuestion = questionsCat1[currentQuesIdx]    //HOLDS ONE SPECIFIC QUESTION:
   question.textContent = `${singleQuestion.quesQ}`
@@ -84,12 +81,13 @@ function renderQuestionCat3() {
     answers.appendChild(renderedAnswer)
   })
 }
+
 function playerChooseAnswer(evt){
   let selectedAnsIdx = Array.from(answers.children).indexOf(evt.target); // this line answers.children from ChatGPT!
   if (selectedAnsIdx == currQuesCorrAnsIdx){
     console.log('correct answer selected');
     playerScore += 1
-    playerScoreContainer.textContent = `${ playerScore }`
+    playerScoreContainer.innerHTML = `Your score:<br>${ playerScore }`
   } else  {
     console.log('incorrect answer selected');
   }  
@@ -98,6 +96,7 @@ function playerChooseAnswer(evt){
   if (currentQuesIdx >= questionsCat1.length || currentQuesIdx >= questionsCat2.length || currentQuesIdx >= questionsCat3.length) {
     roundOver()
   } 
+  
   question.textContent = '' 
   answers.innerHTML = ''
 
@@ -122,8 +121,10 @@ function roundOver(){
 }
 
 function init(){
-  console.log('reset button works');
+  console.log('Initial State:', initialState);
   rulesBtnDiv.innerHTML = initialState;
+  playerScoreContainer.innerHTML = initialScoreState;
+  console.log('After Reset:', rulesBtnDiv.innerHTML);
   question.textContent = '' // this line isnt needed?
   answers.innerHTML = ''
   currentQuesIdx = 0
