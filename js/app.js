@@ -26,6 +26,7 @@ const rulesBtnDiv = document.getElementById("rules-btn-container")
 let initialState = rulesBtnDiv.innerHTML;  //  for eventual game reset
 const playerScoreContainer = document.getElementById("player-score")
 let initialScoreState = playerScoreContainer.innerHTML;
+const countdown = document.getElementById("countdown")
 
 /*--------- Event Listeners ---------*/
 btnCategory1.addEventListener('click', renderQuestionCat1)
@@ -95,7 +96,10 @@ function playerChooseAnswer(evt){
     console.log('incorrect answer selected');
   }  
 
-  currentQuesIdx += 1
+  // THIS IS THE ISSUE I'M TRYING TO SOLVE - 
+  if (currentQuesIdx < questionsCat1.length || currentQuesIdx < questionsCat2.length || currentQuesIdx < questionsCat3.length) {
+    currentQuesIdx += 1
+  } 
   if (currentQuesIdx >= questionsCat1.length || currentQuesIdx >= questionsCat2.length || currentQuesIdx >= questionsCat3.length) {
     roundOver()
   } 
@@ -124,10 +128,10 @@ function roundOver(){
 }
 
 function init(){
-  console.log('Initial State:', initialState);
+  // console.log('Initial State:', initialState);
   rulesBtnDiv.innerHTML = initialState;
+  // console.log('After Reset:', rulesBtnDiv.innerHTML);
   playerScoreContainer.innerHTML = initialScoreState;
-  console.log('After Reset:', rulesBtnDiv.innerHTML);
   question.textContent = '' // this line isnt needed?
   answers.innerHTML = ''
   currentQuesIdx = 0
