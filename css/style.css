@@ -8,14 +8,13 @@ body {
   align-items: center;
 }
 
-
 .generic-background {
   background-color:  rgba(53, 53, 53, 0.75);
   padding: 20px;
   border-radius: 10px;
 }
 
-div#introDiv {
+div#intro-div {
   background-color: rgb(187, 187, 187);
 }
 

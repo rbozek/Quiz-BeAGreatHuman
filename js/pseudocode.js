@@ -29,10 +29,10 @@
 // // when user selects category, tagline, rules, & category buttons disappear -> at any point "reset" or init button starts us over
   // // reset button / init
 
-PROBLEM - 'reset game' resets board, but then cant populate any new questions - probably has to do with TypeError that appears after I finish a category
-  -line 99! I think ChatGPT came up with a gurd idear! (saved bookmark)
+// PROBLEM - 'reset game' resets board, but then cant populate any new questions - probably has to do with TypeError that appears after I finish a category
+//   -line 99! I think ChatGPT came up with a gurd idear! (saved bookmark)
 // PROBLEM - FIXED!--I have "rulesBtnDiv.innerHTML" inside function ONLY FOR CATEGORY 1 - but for some reason it activates even if i'm using category 2 - im calling cat1() inside playerAnswer too! DAMMIT! how can i get that global? - FIXED!!! conditional 
-
+-Fix playerScore!! close but a little wonky
 
   // timer for entire category, not each question
 // ** sounds: sound for button clicks, add sound for playerScore, and diff sound for perfect score  ->  button to turn off sounds??

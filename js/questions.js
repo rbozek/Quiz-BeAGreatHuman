@@ -1,6 +1,6 @@
 const questionsImportCat1 = [
   {
-    quesQ: "What do you do question 1 etc etc?",
+    quesQ: `Fill in the blanks: "Hey, ____ cat spilled that latte all over ____ suitcase."`,
     quesAs: [ 
       { answer: 'be nice', correctAnswer: true },
       { answer: 'be rude', correctAnswer: false },

@@ -20,13 +20,14 @@ let timerSeconds, timerInterval
 const btnCategory1 = document.getElementById("btn-category-1")
 const btnCategory2 = document.getElementById("btn-category-2")
 const btnCategory3 = document.getElementById("btn-category-3")
+// const buttonsContainer = document.getElementById("buttons-container") // might have to go remove butons-container div
 const question = document.getElementById("question-p")
 const answers = document.getElementById("answers-ul")
 const btnReset = document.getElementById("btn-reset")
 const rulesBtnDiv = document.getElementById("rules-btn-container")
-let initialState = rulesBtnDiv.innerHTML;  //  for eventual game reset
+// let initialState = rulesBtnDiv.innerHTML;  //  for eventual game reset
 const playerScoreContainer = document.getElementById("player-score")
-let initialScoreState = playerScoreContainer.innerHTML;
+let initialScoreState = playerScoreContainer.innerHTML = `score`
 const countdown = document.getElementById("countdown")  // TIMER
 
 /*--------- Event Listeners ---------*/
@@ -36,10 +37,28 @@ btnCategory2.addEventListener('click', renderQuestionCat2)
 btnCategory2.addEventListener('click', startTimer)  // TIMER
 btnCategory3.addEventListener('click', renderQuestionCat3)
 btnCategory3.addEventListener('click', startTimer)  // TIMER
-btnReset.addEventListener('click', reset)
+
+
+  // TRYING IDEA, DIDNT WORK
+// buttonsContainer.addEventListener('click', handleCategoryClick);
+// function handleCategoryClick(evt) {
+//   if (evt.target.id === 'btn-category-1') {
+//       renderQuestionCat1();
+//       startTimer();
+//   } else if (evt.target.id === 'btn-category-2') {
+//       renderQuestionCat2();
+//       startTimer();
+//   } else if (evt.target.id === 'btn-category-3') {
+//       renderQuestionCat3();
+//       startTimer();
+//   }
+// }
+
+btnReset.addEventListener('click', resetGame)
 
 
 /*------------ Functions ------------*/
+
 // let startTimer = setInterval(function() {
 //     countdown.textContent = timeLeft + ' seconds remaining.'
 //     timeLeft -= 1
@@ -66,8 +85,9 @@ function stopTimer() {
 
 
 function renderQuestionCat1() {
-  rulesBtnDiv.innerHTML = ''
+  rulesBtnDiv.style.display = 'none'
   currentCategory = 1 // to fix problem at end of playerChooseAnswer
+  console.log('renderQuestionCat1 works');
   let singleQuestion = questionsCat1[currentQuesIdx]    //HOLDS ONE SPECIFIC QUESTION:
   question.textContent = `${singleQuestion.quesQ}`
   let answersToSingleQuestion = singleQuestion.quesAs  //HOLDS ARRAY OF ANSWERS:
@@ -82,8 +102,9 @@ function renderQuestionCat1() {
     answers.appendChild(renderedAnswer)
   })
 }
+
 function renderQuestionCat2() {
-  rulesBtnDiv.innerHTML = ''
+  rulesBtnDiv.style.display = 'none'
   currentCategory = 2 // to fix problem at end of playerChooseAnswer
   let singleQuestion = questionsCat2[currentQuesIdx] 
   question.textContent = `${singleQuestion.quesQ}`
@@ -99,7 +120,7 @@ function renderQuestionCat2() {
   })
 }
 function renderQuestionCat3() {
-  rulesBtnDiv.innerHTML = ''
+  rulesBtnDiv.style.display = 'none'
   currentCategory = 3 // to fix problem at end of playerChooseAnswer
   let singleQuestion = questionsCat3[currentQuesIdx]
   question.textContent = `${singleQuestion.quesQ}`
@@ -117,18 +138,22 @@ function renderQuestionCat3() {
 
 function playerChooseAnswer(evt){
   let selectedAnsIdx = Array.from(answers.children).indexOf(evt.target); // this line answers.children from ChatGPT!
+  playerScoreContainer.innerHTML = `Your score:<br>${ playerScore }`
   if (selectedAnsIdx == currQuesCorrAnsIdx){
-    console.log('correct answer selected');
+    // console.log('correct answer selected');
     playerScore += 1
-    playerScoreContainer.innerHTML = `Your score:<br>${ playerScore }`
   } else  {
-    console.log('incorrect answer selected');
+    // console.log('incorrect answer selected');
   }  
 
-  // THIS IS THE ISSUE I'M TRYING TO SOLVE - 
-  if (currentQuesIdx < questionsCat1.length || currentQuesIdx < questionsCat2.length || currentQuesIdx < questionsCat3.length) {
-    currentQuesIdx += 1
-  } 
+  if (
+    (currentCategory === 1 && currentQuesIdx < questionsCat1.length) ||
+    (currentCategory === 2 && currentQuesIdx < questionsCat2.length) ||
+    (currentCategory === 3 && currentQuesIdx < questionsCat3.length)
+  ) {
+    currentQuesIdx += 1;
+  }
+
   if (currentQuesIdx >= questionsCat1.length || currentQuesIdx >= questionsCat2.length || currentQuesIdx >= questionsCat3.length) {
     roundOver()
   } 
@@ -136,17 +161,24 @@ function playerChooseAnswer(evt){
   question.textContent = '' 
   answers.innerHTML = ''
 
-  if (currentCategory === 1) {
-    renderQuestionCat1();
-  } else if (currentCategory === 2) {
-    renderQuestionCat2();
-  } else if (currentCategory === 3) {
-    renderQuestionCat3();
+  // nested if statement idea from chatGPT
+  if (
+    (currentCategory === 1 && currentQuesIdx < questionsCat1.length) ||
+    (currentCategory === 2 && currentQuesIdx < questionsCat2.length) ||
+    (currentCategory === 3 && currentQuesIdx < questionsCat3.length)
+  ) {
+    if (currentCategory === 1) {
+        renderQuestionCat1();
+    } else if (currentCategory === 2) {
+        renderQuestionCat2();
+    } else if (currentCategory === 3) {
+        renderQuestionCat3();
+    }
   }
 }
 
 function roundOver(){
-  console.log('testing gameover state');
+  // console.log('testing gameover state');
   if (playerScore >= 3) {
     playerScoreContainer.innerHTML = `Your score is:<br> ${ playerScore } <br> Perfect. You are an evolved human.`
   } else if (playerScore < 3 && playerScore > 1) {
@@ -156,17 +188,16 @@ function roundOver(){
   }
 }
 
-function init(){
-  // console.log('Initial State:', initialState);
-  rulesBtnDiv.innerHTML = initialState;
-  // console.log('After Reset:', rulesBtnDiv.innerHTML);
+function resetGame(){
+  rulesBtnDiv.style.display = ''
   playerScoreContainer.innerHTML = initialScoreState;
   question.textContent = '' // this line isnt needed?
   answers.innerHTML = ''
   currentQuesIdx = 0
   playerScore = 0
+  console.log(playerScore, currentQuesIdx);
+  console.log('resetting game');
+
 }
-function reset(){
-  init()
-}
+
 
