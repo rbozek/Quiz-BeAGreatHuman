@@ -11,8 +11,8 @@ const questionsImportCat1 = [
   {
     quesQ: "Question 2, what's good to do??",
     quesAs: [ 
-      { answer: 'help people', correctAnswer: false },
-      { answer: 'hurt people', correctAnswer: true },
+      { answer: '?? people', correctAnswer: false },
+      { answer: 'HELP people', correctAnswer: true },
       { answer: 'kill people', correctAnswer: false },
       { answer: 'steal someones car', correctAnswer: false },
     ]
@@ -22,8 +22,8 @@ const questionsImportCat1 = [
     quesAs: [ 
       { answer: 'bad friend', correctAnswer: false },
       { answer: 'no friend', correctAnswer: false },
-      { answer: 'donut stealer', correctAnswer: true },
-      { answer: 'Good friend', correctAnswer: false },
+      { answer: 'Good friend', correctAnswer: true },
+      { answer: 'Donut stealer', correctAnswer: false },
     ]
   },
 ]

@@ -21,6 +21,7 @@ const answers = document.getElementById("answers-ul")
 const btnReset = document.getElementById("btn-reset")
 
 
+
 /*--------- Event Listeners ---------*/
 btnCategory1.addEventListener('click', renderQuestionCat1)
 btnReset.addEventListener('click', reset)
@@ -32,25 +33,18 @@ function renderQuestionCat1() {
   //HOLDS ONE SPECIFIC QUESTION:
   let singleQuestion = questionsCat1[currentQuesIdx]
   question.textContent = `${singleQuestion.quesQ}`
-  
   //HOLDS ARRAY OF ANSWERS:
   let answersToSingleQuestion = singleQuestion.quesAs
-  // console.log(answersToSingleQuestion);
-  
+    // console.log(answersToSingleQuestion);
   //loop through quesA's 
   answersToSingleQuestion.forEach((eachA, index) => {
-    let renderedAnswer = document.createElement('li')
-    renderedAnswer.textContent = `${eachA.answer}`
-    
-    // similar solution to earlier this morning: likely not using
-    // renderedAnswer.id = eachA.correctAnswer
-
     if (eachA.correctAnswer == true) {   // to log answer index for current question
-      console.log(eachA.correctAnswer);
+      // console.log(eachA.correctAnswer);
       currQuesCorrAnsIdx = index;     // ^^ global!!!
       console.log(currQuesCorrAnsIdx);
     }
-
+    let renderedAnswer = document.createElement('li')
+    renderedAnswer.textContent = `${eachA.answer}`
     //can take advantage of bubbling by adding to container, but keeping here for now:
     renderedAnswer.addEventListener('click', playerChooseAnswer)
     answers.appendChild(renderedAnswer)
@@ -59,25 +53,28 @@ function renderQuestionCat1() {
 }
 
 function playerChooseAnswer(evt){
-
-  // if (){
-  // }
-
-  console.log(evt.target);
-  console.log(currQuesCorrAnsIdx);
+    // console.log(evt.target);
+  // can ask Jurgen if there's time - i thought we figured it out using strings "true" & "false"? this method goes back to array numbers
+  let selectedAnsIdx = Array.from(answers.children).indexOf(evt.target); // this line answers.children from ChatGPT!
+  if (selectedAnsIdx == currQuesCorrAnsIdx){
+    console.log('correct answer selected');
+    playerScore += 1
+  } else  {
+    console.log('incorrect answer selected');
+  }  
 
   currentQuesIdx += 1
   if (currentQuesIdx >= questionsCat1.length){
-    gameOverTest()
+    roundOver()
   }
   question.textContent = '' // this line isnt needed?
   answers.innerHTML = ''
-  // console.log(currentQuesIdx);
-  console.log('player choice click works');
   renderQuestionCat1()
 }
 
-function gameOverTest(){
+
+
+function roundOver(){
   console.log('testing gameover state');
 }
 
