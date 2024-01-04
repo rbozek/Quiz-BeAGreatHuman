@@ -1,11 +1,11 @@
-// console.log('overall test!');
 
 /*------------ Constants ------------*/
 import { questionsImportCat1, questionsImportCat2, questionsImportCat3 } from "../js/data.js"
 const questionsCat1 = Object.values(questionsImportCat1);
 const questionsCat2 = Object.values(questionsImportCat2);
 const questionsCat3 = Object.values(questionsImportCat3);
-// console.log(questionsCat1); 
+import * as gameAudio from "../js/audio.js"
+
 
 /*------------ Variables ------------*/
 let playerScore = 0  // can reset in init or render
@@ -22,6 +22,7 @@ const question = document.getElementById("question-p")
 const answers = document.getElementById("answers-ul")
 const btnReset = document.getElementById("btn-reset")
 const rulesBtnDiv = document.getElementById("rules-btn-container")
+const btnContainer = document.getElementById("buttons-container") // for playClick audio purposes only
 const playerScoreContainer = document.getElementById("player-score")
 let initialScoreState = playerScoreContainer.innerHTML = `score`
 const countdown = document.getElementById("countdown")  // TIMER
@@ -29,19 +30,19 @@ const countdown = document.getElementById("countdown")  // TIMER
 
 /*--------- Event Listeners ---------*/
 btnCategory1.addEventListener('click', renderQuestionCat1)
-btnCategory1.addEventListener('click', startTimer)  // TIMER
+btnCategory1.addEventListener('click', startTimer)
 btnCategory2.addEventListener('click', renderQuestionCat2)
-btnCategory2.addEventListener('click', startTimer)  // TIMER
+btnCategory2.addEventListener('click', startTimer)
 btnCategory3.addEventListener('click', renderQuestionCat3)
-btnCategory3.addEventListener('click', startTimer)  // TIMER
+btnCategory3.addEventListener('click', startTimer)
+btnContainer.addEventListener('click', gameAudio.playClick)
 btnReset.addEventListener('click', resetGame)
 
 
 /*------------ Functions ------------*/
-
 function startTimer() {
   // Reset the timer
-  timerSeconds = 5
+  timerSeconds = 80
   // Set up the interval to update the timer every second
   timerInterval = setInterval(updateTimer, 1000)
 }
@@ -114,9 +115,11 @@ function playerChooseAnswer(evt){
   let selectedAnsIdx = Array.from(answers.children).indexOf(evt.target); // this line answers.children from ChatGPT!
   if (selectedAnsIdx == currQuesCorrAnsIdx){
     // console.log('correct answer selected');
+    gameAudio.playDing()
     playerScore += 1
   } else  {
     playerScore += 0
+    gameAudio.playPianoWrong()
     // console.log('incorrect answer selected');
   }
 
@@ -158,15 +161,22 @@ function roundOver(){
   stopTimer()
   countdown.textContent = ``
   if (playerScore >= 5) {
+    gameAudio.playLevelSucceed()
     playerScoreContainer.innerHTML = `Your score is:<br> ${ playerScore }<br>Perfect. You are an evolved human.`
-  } else if (playerScore < 5 && playerScore > 1) {
+  } else if (playerScore < 5 && playerScore > 0) {
+    gameAudio.playApplause()
     playerScoreContainer.innerHTML = `Your score is:<br> ${ playerScore }<br>Nice work. Keep practicing (at life).`  
   } else {
+    gameAudio.playLevelFail()
     playerScoreContainer.innerHTML = `Your score is:<br> ${ playerScore }<br>No offense but you might be a bad person.`  
   }
 }
 
+
+
 function resetGame(){
+  gameAudio.stopAudio()
+  gameAudio.playClick()
   rulesBtnDiv.style.display = ''
   playerScoreContainer.innerHTML = initialScoreState;
   countdown.textContent = ``
