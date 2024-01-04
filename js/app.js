@@ -12,6 +12,7 @@ const questionsCat3 = Object.values(questionsImportCat3);
 let playerScore = 0  // can reset in init or render
 let currentQuesIdx = 0
 let currQuesCorrAnsIdx  // for playerChooseAnswer
+let currentCategory  // to fix problem in renderQUestion & playerCHoice
 
 
 /*---- Cached Element References ----*/
@@ -36,8 +37,9 @@ btnReset.addEventListener('click', reset)
 /*------------ Functions ------------*/
 
 function renderQuestionCat1() {
-  rulesBtnDiv.innerHTML = '' // if I want to make entire top section disappear
+  // rulesBtnDiv.innerHTML = '' // if I want to make entire top section disappear
   // btnCategory1.style.display = "none"; // if i want to make this individual button disappear
+  currentCategory = 1 // to fix problem at end of playerChooseAnswer
   let singleQuestion = questionsCat1[currentQuesIdx]    //HOLDS ONE SPECIFIC QUESTION:
   question.textContent = `${singleQuestion.quesQ}`
   let answersToSingleQuestion = singleQuestion.quesAs  //HOLDS ARRAY OF ANSWERS:
@@ -53,6 +55,7 @@ function renderQuestionCat1() {
   })
 }
 function renderQuestionCat2() {
+  currentCategory = 2 // to fix problem at end of playerChooseAnswer
   let singleQuestion = questionsCat2[currentQuesIdx] 
   question.textContent = `${singleQuestion.quesQ}`
   let answersToSingleQuestion = singleQuestion.quesAs 
@@ -67,6 +70,7 @@ function renderQuestionCat2() {
   })
 }
 function renderQuestionCat3() {
+  currentCategory = 3 // to fix problem at end of playerChooseAnswer
   let singleQuestion = questionsCat3[currentQuesIdx]
   question.textContent = `${singleQuestion.quesQ}`
   let answersToSingleQuestion = singleQuestion.quesAs  
@@ -80,7 +84,6 @@ function renderQuestionCat3() {
     answers.appendChild(renderedAnswer)
   })
 }
-
 function playerChooseAnswer(evt){
   let selectedAnsIdx = Array.from(answers.children).indexOf(evt.target); // this line answers.children from ChatGPT!
   if (selectedAnsIdx == currQuesCorrAnsIdx){
@@ -95,9 +98,16 @@ function playerChooseAnswer(evt){
   if (currentQuesIdx >= questionsCat1.length || currentQuesIdx >= questionsCat2.length || currentQuesIdx >= questionsCat3.length) {
     roundOver()
   } 
-  question.textContent = '' // this line isnt needed?
+  question.textContent = '' 
   answers.innerHTML = ''
-  renderQuestionCat1()
+
+  if (currentCategory === 1) {
+    renderQuestionCat1();
+  } else if (currentCategory === 2) {
+    renderQuestionCat2();
+  } else if (currentCategory === 3) {
+    renderQuestionCat3();
+  }
 }
 
 function roundOver(){

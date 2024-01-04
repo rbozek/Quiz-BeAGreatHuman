@@ -23,12 +23,15 @@
 // // update playerScore - compare playerChoice with correctAnswer, if === then add points, else then nothing
   // // & display playerScore
 
-  QUESTIONS - smartest approach for duplicate answers piling up? (clear category buttons, 
 
-  // end-game scenario when a Category is finished! 
+// // end-game scenario when a Category is finished! 
 
-// when user selects category, tagline, rules, & category buttons disappear -> at any point "reset" or init button starts us over
-  // reset button / init
+// // when user selects category, tagline, rules, & category buttons disappear -> at any point "reset" or init button starts us over
+  // // reset button / init
+
+PROBLEM - 'reset game' resets board, but then cant populate any new questions
+  --I have "rulesBtnDiv.innerHTML" inside function ONLY FOR CATEGORY 1 - but for some reason it activates even if i'm using category 2 - im calling cat1() inside playerAnswer too! DAMMIT! how can i get that global? - FIXED!!!
+
 
   // timer for entire category, not each question
 // ** sounds: sound for button clicks, add sound for playerScore, and diff sound for perfect score  ->  button to turn off sounds??
