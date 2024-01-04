@@ -1,7 +1,7 @@
 // console.log('overall test!');
 
 /*------------ Constants ------------*/
-import { questionsImportCat1, questionsImportCat2, questionsImportCat3 } from "../js/questions.js"
+import { questionsImportCat1, questionsImportCat2, questionsImportCat3 } from "../js/data.js"
 const questionsCat1 = Object.values(questionsImportCat1);
 const questionsCat2 = Object.values(questionsImportCat2);
 const questionsCat3 = Object.values(questionsImportCat3);
@@ -12,7 +12,6 @@ let playerScore = 0  // can reset in init or render
 let currentQuesIdx = 0
 let currQuesCorrAnsIdx  // for playerChooseAnswer
 let currentCategory  // to fix problem in renderQUestion & playerCHoice
-let timeLeft = 80  // TIMER
 let timerSeconds, timerInterval
 
 /*---- Cached Element References ----*/
@@ -26,6 +25,7 @@ const rulesBtnDiv = document.getElementById("rules-btn-container")
 const playerScoreContainer = document.getElementById("player-score")
 let initialScoreState = playerScoreContainer.innerHTML = `score`
 const countdown = document.getElementById("countdown")  // TIMER
+
 
 /*--------- Event Listeners ---------*/
 btnCategory1.addEventListener('click', renderQuestionCat1)
@@ -41,17 +41,23 @@ btnReset.addEventListener('click', resetGame)
 
 function startTimer() {
   // Reset the timer
-  timerSeconds = 80;
+  timerSeconds = 5
   // Set up the interval to update the timer every second
-  timerInterval = setInterval(updateTimer, 1000);
+  timerInterval = setInterval(updateTimer, 1000)
 }
 function updateTimer() {
-  countdown.textContent = `Time: ${timerSeconds}s`;
-  timerSeconds -= 1;
+  countdown.textContent = `Time: ${timerSeconds}s`
+  timerSeconds -= 1
+  if (timerSeconds < 0) {
+    countdown.textContent = `Out of time!`
+    roundOver()
+    question.textContent = '' 
+    answers.innerHTML = ''
+  }
 }
 function stopTimer() {
   // Clear the interval to stop the timer
-  clearInterval(timerInterval);
+  clearInterval(timerInterval)
 }
 
 function renderQuestionCat1() {

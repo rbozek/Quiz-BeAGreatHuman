@@ -1,5 +1,3 @@
-
-
 // //next:
 // // move questions into app.js (big array of objects, each object k:v pairs)
 // // CATEGORIES - separate question array for each (category1, category 2, etc)
@@ -15,7 +13,6 @@
   // // for "clicking answers" - add event listener at same time when answers are printed!
   // //  move for loop to update global variable
 // // get LI's clickable / - event listener for those
-
 
 // // finish function for chooseAnswer - that's where we'll use conditional to see if it matches "true" from quesAs?
 // // update playerScore - compare playerChoice with correctAnswer, if === then add points, else then nothing
@@ -39,8 +36,12 @@
 // color scheme: warm colors
 
 // IF I HAVE TIME
+// clearing Q's and A's - diditn mess with it for fear of breaking it - but see if i can display.none instead of innerHTML (but might make a mess with reest? idk)
 // seaprate "rules" & "buttons" - when user starts, everything disappears, but after a reset, only buttons re-appear
-// add conditional - if player got a perfect score, play hidden sound (or display hidden image)
+// perfect score make more exciting - if player perfect score, hidden image or page
+
+
+
 
 
 
