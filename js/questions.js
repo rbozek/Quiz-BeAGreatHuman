@@ -96,7 +96,7 @@ const questionsImportCat2 = [
 
 const questionsImportCat3 = [
   {
-    quesQ: `When driving on a highway in the U.S., the left-hand lanes are legally intended for _____.`,
+    quesQ: `When driving on a highway in the U.S., the left-hand lanes are legally intended for:`,
     quesAs: [ 
       { answer: `Driving fast.`, correctAnswer: false },
       { answer: `Passing, then returning to a right-hand lane.`, correctAnswer: true },
@@ -107,7 +107,7 @@ const questionsImportCat3 = [
   {
     quesQ: `After you finish your Arby's Gut Buster with Cream Cheese, you should do this with your trash:`,
     quesAs: [ 
-      { answer: `Recycle if possible, otherwise trash it.`, correctAnswer: true },
+      { answer: `Recycle or compost if possible, otherwise trash it.`, correctAnswer: true },
       { answer: `Toss it on the ground.`, correctAnswer: false },
       { answer: `Give it back to an employee.`, correctAnswer: false },
       { answer: `Leave it on the table for a staff member.`, correctAnswer: false },

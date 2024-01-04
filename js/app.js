@@ -150,6 +150,7 @@ function playerChooseAnswer(evt){
 
 function roundOver(){
   // console.log('testing gameover state');
+  stopTimer()
   if (playerScore >= 3) {
     playerScoreContainer.innerHTML = `Your score is:<br> ${ playerScore } <br> Perfect. You are an evolved human.`
   } else if (playerScore < 3 && playerScore > 1) {
