@@ -22,6 +22,7 @@ const question = document.getElementById("question-p")
 const answers = document.getElementById("answers-ul")
 const btnReset = document.getElementById("btn-reset")
 const rulesBtnDiv = document.getElementById("rules-btn-container")
+let initialState = rulesBtnDiv.innerHTML;  //  for eventual game reset
 const playerScoreContainer = document.getElementById("player-score")
 
 
@@ -35,7 +36,7 @@ btnReset.addEventListener('click', reset)
 /*------------ Functions ------------*/
 
 function renderQuestionCat1() {
-  // rulesBtnDiv.innerHTML = ''
+  rulesBtnDiv.innerHTML = '' // if I want to make entire top section disappear
   // btnCategory1.style.display = "none"; // if i want to make this individual button disappear
   let singleQuestion = questionsCat1[currentQuesIdx]    //HOLDS ONE SPECIFIC QUESTION:
   question.textContent = `${singleQuestion.quesQ}`
@@ -112,15 +113,12 @@ function roundOver(){
 
 function init(){
   console.log('reset button works');
+  rulesBtnDiv.innerHTML = initialState;
   question.textContent = '' // this line isnt needed?
   answers.innerHTML = ''
-  // playerScoreContainer.textContent = `${playerScore}`
   currentQuesIdx = 0
   playerScore = 0
-  // quizOver = false
-  // letPerfectScore = false
 }
-
 function reset(){
   init()
 }
