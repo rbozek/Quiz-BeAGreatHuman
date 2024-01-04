@@ -20,8 +20,8 @@
 
 
 // // finish function for chooseAnswer - that's where we'll use conditional to see if it matches "true" from quesAs?
-// update playerScore - compare playerChoice with correctAnswer, if === then add points, else then nothing
-  // & display playerScore
+// // update playerScore - compare playerChoice with correctAnswer, if === then add points, else then nothing
+  // // & display playerScore
 // end-game scenario when a Category is finished! 
 
 // when user selects category, tagline, rules, & category buttons disappear -> at any point "reset" or init button starts us over
@@ -41,6 +41,7 @@
 
 
 // ICEBOX OR ATTEMPT?
+// cleanup TypeError in console that occurs at the end of each round
 // replace radio buttons with images
 // CATEGORIES -> after finishing 1st category & seeing score, user can proceed to the other categories & keep updating their total score
 // one question at a time instead of listing all at once ->  

@@ -76,6 +76,8 @@ function playerChooseAnswer(evt){
 
 function roundOver(){
   console.log('testing gameover state');
+  playerScoreContainer.innerHTML = `Your score is:<br> ${ playerScore } <br> Nice work.`
+  
 }
 
 function init(){
