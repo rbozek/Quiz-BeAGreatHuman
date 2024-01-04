@@ -31,9 +31,9 @@
 // //   -line 99! I think ChatGPT came up with a gurd idear! (saved bookmark)
 // // PROBLEM - FIXED!--I have "rulesBtnDiv.innerHTML" inside function ONLY FOR CATEGORY 1 - but for some reason it activates even if i'm using category 2 - im calling cat1() inside playerAnswer too! DAMMIT! how can i get that global? - FIXED!!! conditional 
 
--Check playerScore!! might be a little wonky
+// // -Check playerScore!! might be a little wonky
 
-// timer for entire category, not each question
+// // timer for entire category, not each question
 // ** sounds: sound for button clicks, add sound for playerScore, and diff sound for perfect score  ->  button to turn off sounds??
 // ** images: favicon to page DONE, monk image for top of page before game starts
 // color scheme: warm colors

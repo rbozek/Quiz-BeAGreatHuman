@@ -1,6 +1,7 @@
 body {
   background-image: url('../assets/images/tile-orange.jpg');
   background-size: cover;
+  /* background-repeat: no-repeat; */
   background-color:  rgb(251, 122, 0);
   font-family: sans-serif;
   display: flex;

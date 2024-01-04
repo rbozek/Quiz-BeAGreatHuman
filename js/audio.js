@@ -1,6 +1,7 @@
 let click = new Audio('../assets/audio/click.wav')
 let ding = new Audio('../assets/audio/ding.wav')
 let sadTrombone = new Audio('../assets/audio/sadtrombone.wav')
+let pianoWrong = new Audio('../assets/audio/pianowrong.wav')
 let levelSuccess = new Audio('../assets/audio/levelsuccesstrimmed.mp3')
 let levelFail = new Audio('../assets/audio/levelfailtrimmed.mp3')
 
@@ -16,6 +17,10 @@ function playTrombone() {
  sadTrombone.volume = 0.15
  sadTrombone.play()
 }
+function playPianoWrong() {
+ pianoWrong.volume = 0.15
+ pianoWrong.play()
+}
 function playLevelSucceed() {
  levelSuccess.volume = 0.15
  levelSuccess.play()
@@ -29,6 +34,7 @@ export {
  playClick,
  playDing,
  playTrombone,
+ playPianoWrong,
  playLevelSucceed,
  playLevelFail
 }

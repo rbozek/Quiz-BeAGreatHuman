@@ -71,7 +71,6 @@ function renderQuestionCat1() {
     answers.appendChild(renderedAnswer)
   })
 }
-
 function renderQuestionCat2() {
   rulesBtnDiv.style.display = 'none'
   currentCategory = 2
@@ -151,18 +150,20 @@ function playerChooseAnswer(evt){
 function roundOver(){
   // console.log('testing gameover state');
   stopTimer()
-  if (playerScore >= 3) {
-    playerScoreContainer.innerHTML = `Your score is:<br> ${ playerScore } <br> Perfect. You are an evolved human.`
-  } else if (playerScore < 3 && playerScore > 1) {
-    playerScoreContainer.innerHTML = `Your score is:<br> ${ playerScore } <br> Nice work. Keep practicing (at life).`  
+  countdown.textContent = ``
+  if (playerScore >= 5) {
+    playerScoreContainer.innerHTML = `Your score is:<br> ${ playerScore }<br>Perfect. You are an evolved human.`
+  } else if (playerScore < 5 && playerScore > 1) {
+    playerScoreContainer.innerHTML = `Your score is:<br> ${ playerScore }<br>Nice work. Keep practicing (at life).`  
   } else {
-    playerScoreContainer.innerHTML = `Your score is:<br> ${ playerScore } <br> No offense but you might be a bad person.`  
+    playerScoreContainer.innerHTML = `Your score is:<br> ${ playerScore }<br>No offense but you might be a bad person.`  
   }
 }
 
 function resetGame(){
   rulesBtnDiv.style.display = ''
   playerScoreContainer.innerHTML = initialScoreState;
+  countdown.textContent = ``
   question.textContent = '' // this line isnt needed?
   answers.innerHTML = ''
   currentQuesIdx = 0
