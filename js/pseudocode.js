@@ -29,7 +29,7 @@
 // // when user selects category, tagline, rules, & category buttons disappear -> at any point "reset" or init button starts us over
   // // reset button / init
 
-PROBLEM - 'reset game' resets board, but then cant populate any new questions
+PROBLEM - 'reset game' resets board, but then cant populate any new questions - probably has to do with TypeError that appears after I finish a category
 // PROBLEM - FIXED!--I have "rulesBtnDiv.innerHTML" inside function ONLY FOR CATEGORY 1 - but for some reason it activates even if i'm using category 2 - im calling cat1() inside playerAnswer too! DAMMIT! how can i get that global? - FIXED!!! conditional 
 
 

@@ -36,6 +36,7 @@ btnReset.addEventListener('click', reset)
 
 /*------------ Functions ------------*/
 function renderQuestionCat1() {
+  rulesBtnDiv.innerHTML = ''
   currentCategory = 1 // to fix problem at end of playerChooseAnswer
   let singleQuestion = questionsCat1[currentQuesIdx]    //HOLDS ONE SPECIFIC QUESTION:
   question.textContent = `${singleQuestion.quesQ}`
@@ -52,6 +53,7 @@ function renderQuestionCat1() {
   })
 }
 function renderQuestionCat2() {
+  rulesBtnDiv.innerHTML = ''
   currentCategory = 2 // to fix problem at end of playerChooseAnswer
   let singleQuestion = questionsCat2[currentQuesIdx] 
   question.textContent = `${singleQuestion.quesQ}`
@@ -67,6 +69,7 @@ function renderQuestionCat2() {
   })
 }
 function renderQuestionCat3() {
+  rulesBtnDiv.innerHTML = ''
   currentCategory = 3 // to fix problem at end of playerChooseAnswer
   let singleQuestion = questionsCat3[currentQuesIdx]
   question.textContent = `${singleQuestion.quesQ}`
