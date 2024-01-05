@@ -1,7 +1,7 @@
 # BE A GREAT HUMAN - THE QUIZZENING
 ## “Get through life without looking dumb (or dying)”
 
-![screenshot here eventually](https://dietmartemps.com/media_library/image/28928_1374416277166.jpg)
+![HumanQuizScreenshot](https://github.com/rbozek/Quiz-BeAGreatHuman/assets/152832616/d905db61-01da-4e76-a194-17f4368af168)
 
 What kind of footprint do you leave on the world? What impact do you have on the people around you? Do you know how to deal with emergency situations? Being a good person doesn't have to be like wearing a neon yellow sweater you show off to the world - all it takes is paying attention to the little details in life.<br>
 The goal is simple - choose a category and answer questions. Each question will have multiple choice answers, and after selecting your answer you will receive points - or not! At the end of a category you will see your total score and learn how close you are to being a "perfect person". (FYI - no such thing.)
