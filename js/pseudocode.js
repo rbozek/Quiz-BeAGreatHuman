@@ -33,6 +33,7 @@
 // // timer for entire category, not each question
 // // ** sounds: sound for button clicks, add sound for playerScore, and diff sound for perfect score  ->  button to turn off sounds??
 
+// fix timer issue!
 // fonts! (quick)
 // ** images: favicon to page DONE, monk image for top of page before game starts
     // Put rules & category buttons on top of meditate image

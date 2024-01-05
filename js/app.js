@@ -176,6 +176,7 @@ function roundOver(){
 function resetGame(){
   gameAudio.stopAudio()
   gameAudio.playClick()
+  stopTimer()
   rulesBtnsDiv.style.display = ''
   playerScoreContainer.innerHTML = initialScoreState;
   countdown.textContent = ``
