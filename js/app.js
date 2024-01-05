@@ -45,13 +45,11 @@ btnReset.addEventListener('click', resetGame)
 /*------------ Functions ------------*/
 function startTimer() {
   btnCategory3.addEventListener('click', startTimer)
-
+  timerSeconds = 80
+  timerInterval = setInterval(updateTimer, 1000)
   countdown.style.display = ''
   countdown.style.margin = '10px'
   countdown.style.padding = '20px'
-
-  timerSeconds = 80
-  timerInterval = setInterval(updateTimer, 1000)
 }
 function updateTimer() {
   countdown.textContent = `Time remaining: ${timerSeconds}s`
