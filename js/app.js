@@ -1,10 +1,10 @@
 
 /*------------ Constants ------------*/
-import { questionsImportCat1, questionsImportCat2, questionsImportCat3 } from "../js/data.js"
+import { questionsImportCat1, questionsImportCat2, questionsImportCat3 } from "./js/data.js"
 const questionsCat1 = Object.values(questionsImportCat1);
 const questionsCat2 = Object.values(questionsImportCat2);
 const questionsCat3 = Object.values(questionsImportCat3);
-import * as gameAudio from "../js/audio.js"
+import * as gameAudio from "./js/audio.js"
 
 
 /*------------ Variables ------------*/
