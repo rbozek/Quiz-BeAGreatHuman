@@ -36,7 +36,7 @@
 // // fix timer issue!
 // // fonts! (quick)
 // // ** images: favicon to page DONE, monk image for top of page before game starts
-// mouse pointer, li mouse selects whole thing
+// // mouse pointer, li mouse selects whole thing
 // README! can use "badges" for technology used & credits (inside Course SUpplements > GitHub Beautifuication (2nd link has nicer looking ones)
 // .gitignore or .env for dead code!
 
@@ -56,7 +56,7 @@ CIRCLE BACK BIGER
 // IF I HAVE TIME - BIG
 // clearing Q's and A's - diditn mess with it for fear of breaking it - but see if i can display.none instead of innerHTML (but might make a mess with reest? idk)
 // // seaprate "rules" & "buttons" - when user starts, everything disappears, but after a reset, only buttons re-appear
-// perfect score make more exciting - if player perfect score, hidden image or page!
+// // perfect score make more exciting - if player perfect score, hidden image or page!
 
 
 
