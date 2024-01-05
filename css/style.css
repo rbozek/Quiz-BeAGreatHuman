@@ -3,7 +3,7 @@ body {
   background-size: cover;
   /* background-repeat: no-repeat; */
   background-color:  rgb(251, 122, 0);
-  font-family: sans-serif;
+  font-family: 'Marmelad', sans-serif;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -23,6 +23,7 @@ body {
 
 h1, h2 {
   background-color:  rgba(53, 53, 53, 0.75);
+  color: rgb(209, 182, 1);
   margin: 0px;
   padding: 10px;
   border-radius: 10px;
@@ -33,11 +34,11 @@ h1, h2 {
 }
 
 div#rules-div {
-  background-color: rgb(187, 187, 187);
+  background-color: rgb(36, 36, 36);
 }
 
 div#question-container {
-  background-color:  rgba(19, 19, 19, 1);
+  background-color:  rgb(17, 65, 0);
   max-width: 450px;
 }
 
