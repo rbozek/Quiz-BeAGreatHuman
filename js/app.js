@@ -6,12 +6,11 @@ const questionsCat2 = Object.values(questionsImportCat2);
 const questionsCat3 = Object.values(questionsImportCat3);
 import * as gameAudio from "./audio.js"
 
-
 /*------------ Variables ------------*/
-let playerScore = 0  // can reset in init or render
+let playerScore = 0
 let currentQuesIdx = 0
 let currQuesCorrAnsIdx  // for playerChooseAnswer
-let currentCategory  // to fix problem in renderQUestion & playerCHoice
+let currentCategory  // for renderQUestion & playerChoice
 let timerSeconds, timerInterval
 
 /*---- Cached Element References ----*/
@@ -21,17 +20,13 @@ const btnCategory3 = document.getElementById("btn-category-3")
 const question = document.getElementById("question-p")
 const answers = document.getElementById("answers-ul")
 const btnReset = document.getElementById("btn-reset")
-btnReset.style.display = 'none' // THIS TESTING
-
+btnReset.style.display = 'none'
 const rulesBtnsDiv = document.getElementById("rules-btns-container")
-const btnContainer = document.getElementById("buttons-container") // for playClick audio purposes
-const questionContainer = document.getElementById("question-container") // fix for "question-container" little black box issue
-
-
+const btnContainer = document.getElementById("buttons-container")  // for playClick audio
+const questionContainer = document.getElementById("question-container")  // for question-container little black box issue
 const playerScoreContainer = document.getElementById("player-score")
-// let initialScoreState = playerScoreContainer.innerHTML = ``
 playerScoreContainer.style.display = 'none'
-const countdown = document.getElementById("countdown")  // TIMER
+const countdown = document.getElementById("countdown")  // timer
 countdown.style.display = 'none'
 
 /*--------- Event Listeners ---------*/
@@ -43,7 +38,6 @@ btnCategory3.addEventListener('click', renderQuestionCat3)
 btnCategory3.addEventListener('click', startTimer)
 btnContainer.addEventListener('click', gameAudio.playClick)
 btnReset.addEventListener('click', resetGame)
-
 
 /*------------ Functions ------------*/
 function startTimer() {
@@ -69,27 +63,26 @@ function stopTimer() {
   clearInterval(timerInterval)
 }
 
-function renderQuestionCat1() {
+function renderQuestionCat1() { 
   rulesBtnsDiv.style.display = 'none'
-  questionContainer.style.display = 'block'  // fix for "question-container" little black box issue
-  currentCategory = 1 // to fix problem at end of playerChooseAnswer
-  let singleQuestion = questionsCat1[currentQuesIdx]    //HOLDS ONE SPECIFIC QUESTION:
+  questionContainer.style.display = 'block'  // for question-container little black box issue
+  currentCategory = 1  // for playerChooseAnswer
+  let singleQuestion = questionsCat1[currentQuesIdx]  // holds one specific question
   question.textContent = `${singleQuestion.quesQ}`
-  let answersToSingleQuestion = singleQuestion.quesAs  //HOLDS ARRAY OF ANSWERS:
-  answersToSingleQuestion.forEach((eachA, index) => {     //loop through quesA's
-    if (eachA.correctAnswer == true) {   // to log answer index for current question
-      currQuesCorrAnsIdx = index;     // ^^ global!!!
+  let answersToSingleQuestion = singleQuestion.quesAs  // holds array of answers
+  answersToSingleQuestion.forEach((eachA, index) => {  // loop through quesAs
+    if (eachA.correctAnswer == true) {  // to log answer index for current question
+      currQuesCorrAnsIdx = index;  // global! ^^
     }
     let renderedAnswer = document.createElement('li')
     renderedAnswer.textContent = `${eachA.answer}`
-    //can take advantage of bubbling by adding to container, but keeping here for now:
     renderedAnswer.addEventListener('click', playerChooseAnswer)
     answers.appendChild(renderedAnswer)
   })
 }
 function renderQuestionCat2() {
   rulesBtnsDiv.style.display = 'none'
-  questionContainer.style.display = 'block'  // fix for "question-container" little black box issue
+  questionContainer.style.display = 'block'
   currentCategory = 2
   let singleQuestion = questionsCat2[currentQuesIdx] 
   question.textContent = `${singleQuestion.quesQ}`
@@ -106,7 +99,7 @@ function renderQuestionCat2() {
 }
 function renderQuestionCat3() {
   rulesBtnsDiv.style.display = 'none'
-  questionContainer.style.display = 'block'  // fix for "question-container" little black box issue
+  questionContainer.style.display = 'block'
   currentCategory = 3
   let singleQuestion = questionsCat3[currentQuesIdx]
   question.textContent = `${singleQuestion.quesQ}`
@@ -123,16 +116,15 @@ function renderQuestionCat3() {
 }
 
 function playerChooseAnswer(evt){
-  let selectedAnsIdx = Array.from(answers.children).indexOf(evt.target); // this line answers.children from ChatGPT!
+  let selectedAnsIdx = Array.from(answers.children).indexOf(evt.target);
   if (selectedAnsIdx == currQuesCorrAnsIdx){
-    // console.log('correct answer selected');
     gameAudio.playDing()
     playerScore += 1
   } else  {
     playerScore += 0
     gameAudio.playPianoWrong()
-    // console.log('incorrect answer selected');
   }
+  
   playerScoreContainer.style.display = ''
   playerScoreContainer.innerHTML = `Your score:<br>${ playerScore }`
   playerScoreContainer.style.margin = '10px'
@@ -153,7 +145,6 @@ function playerChooseAnswer(evt){
   question.textContent = '' 
   answers.innerHTML = ''
 
-  // nested if statement idea from chatGPT
   if (
     (currentCategory === 1 && currentQuesIdx < questionsCat1.length) ||
     (currentCategory === 2 && currentQuesIdx < questionsCat2.length) ||
@@ -170,11 +161,9 @@ function playerChooseAnswer(evt){
 }
 
 function roundOver(){
-  // console.log('testing gameover state');
   stopTimer()
-  // countdown.textContent = ``
   countdown.style.display = 'none'
-  questionContainer.style.display = 'none' // fix for "question-container" little black box issue
+  questionContainer.style.display = 'none'  // for question-container little black box issue
   if (playerScore >= 5) {
     gameAudio.playLevelSucceed()
     playerScoreContainer.innerHTML = `Your score is:<br> ${ playerScore }<br>Perfect. You are an evolved human.`
@@ -187,21 +176,18 @@ function roundOver(){
   }
 }
 
-
 function resetGame(){
   gameAudio.stopAudio()
   gameAudio.playClick()
   stopTimer()
   rulesBtnsDiv.style.display = ''
   countdown.style.display = 'none'
-  questionContainer.style.display = 'none' // fix for "question-container" little black box issue
+  questionContainer.style.display = 'none'  // for question-container little black box issue
   playerScoreContainer.style.display = 'none'
   btnReset.style.display = 'none'
   countdown.textContent = ``
-  question.textContent = '' // this line isnt needed?
+  question.textContent = ''
   answers.innerHTML = ''
   currentQuesIdx = 0
   playerScore = 0
-  console.log(playerScore, currentQuesIdx);
-  console.log('resetting game');
 }

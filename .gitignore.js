@@ -50,7 +50,6 @@ CIRCLE BACK IF IM MENTALLY ABLE TO:
 -meditate image go underneath h1 & h2 a bit  (position relative, z-index)
 
 -Put rules & category buttons on top of meditate image
--have score, timer, and reset game buttons appear once game starts
 
 
 

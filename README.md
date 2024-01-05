@@ -24,13 +24,13 @@ The goal is simple - choose a category and answer questions. Each question will 
 - [Freesound](https://freesound.org/) - miscellaneous sound effects
 - [Justin Abene](https://github.com/jmca) - 2 pieces of music for game succeed or fail
 - [Google Fonts](https://fonts.google.com/specimen/Marmelad) - Marmelad font
+- [ChatGPT](https://chat.openai.com) - in app.js: syntax assistance for line 119, & nested conditionals assistance for lines 148-160
 
 ## :brain:	Planning Materials
 - [Google Document](https://docs.google.com/document/d/113u75inesnjXXG_PjuJ-9mHIlA8qXYocUYC1vlsqJ4E/edit?usp=drive_link)
 
 ## :wrench:	Basic Improvements (a.k.a. not quite Ice Box)
 
-- Have player score pop 
 - Change timer to display mins:seconds, rather than seconds only
 - Add more questions & more categories
 - Improve Flexbox layout
