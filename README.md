@@ -31,6 +31,7 @@ The goal is simple - choose a category and answer questions. Each question will 
 
 ## :wrench:	Basic Improvements (a.k.a. not quite Ice Box)
 
+- Finish updating few remaining placeholder questions
 - Change timer to display mins:seconds, rather than seconds only
 - Add more questions & more categories
 - Improve Flexbox layout
