@@ -117,7 +117,7 @@ const questionsImportCat3 = [
     quesQ: `What item is NOT recyclable?`,
     quesAs: [ 
       { answer: `A toilet`, correctAnswer: false },
-      { answer: `Pizza boxes`, correctAnswer: true },
+      { answer: `Used pizza boxes`, correctAnswer: true },
       { answer: `Crayons`, correctAnswer: false },
       { answer: `Roof shingles`, correctAnswer: false },
     ]
