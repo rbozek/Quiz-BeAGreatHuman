@@ -32,7 +32,7 @@ Minecat uses JoyPixels 6.0 Cat With Wry Smile as favicon. Found at: Joypixels. (
 
 ##Basic Improvements (not quite Ice Box)
 
-list here
+change timer to display mins:seconds
 
 ##Ice Box 
 

@@ -41,9 +41,7 @@ btnReset.addEventListener('click', resetGame)
 
 /*------------ Functions ------------*/
 function startTimer() {
-  // Reset the timer
   timerSeconds = 80
-  // Set up the interval to update the timer every second
   timerInterval = setInterval(updateTimer, 1000)
 }
 function updateTimer() {
@@ -57,7 +55,6 @@ function updateTimer() {
   }
 }
 function stopTimer() {
-  // Clear the interval to stop the timer
   clearInterval(timerInterval)
 }
 
