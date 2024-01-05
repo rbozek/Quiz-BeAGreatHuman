@@ -49,6 +49,8 @@ div#question-container {
   background-color:  rgb(0, 0, 0);
   border-radius: 10px;
   max-width: 450px;
+  min-width: 250px;
+  padding: 10px;
 }
 
 p#question-p{
@@ -97,9 +99,8 @@ button {
   display: inline-block;
   margin: 4px 8px;
   padding: 8px 8px;
-  /* font-size: 16px; */
+  font-size: 16px;
   text-align: center;
-  text-decoration: none;
   cursor: pointer;
   border: none;
   border-radius: 5px;
