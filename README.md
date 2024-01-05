@@ -39,6 +39,7 @@ The goal is simple - choose a category and answer questions. Each question will 
 ## :ice_cube::boxing_glove: Ice Box Features 
 
 - Add option to turn sounds off
+- Make design more mobile friendly
 - Answer handling -> after player selects incorrect answer, pause on question, indicate which answer is correct (possibly with additional trivia/info), then click to move to next question
 - Score handling complexity -> instead of simply correct/incorrect, allow each question a "points maximum" for choosing correctly on first attempt, and subtract points for each incorrect guess
 - Category handling -> after finishing 1st category, player can maintain score and proceed on to other categories
