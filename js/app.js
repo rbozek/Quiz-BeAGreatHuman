@@ -21,6 +21,8 @@ const btnCategory3 = document.getElementById("btn-category-3")
 const question = document.getElementById("question-p")
 const answers = document.getElementById("answers-ul")
 const btnReset = document.getElementById("btn-reset")
+btnReset.style.display = 'none' // THIS TESTING
+
 const rulesBtnsDiv = document.getElementById("rules-btns-container")
 const btnContainer = document.getElementById("buttons-container") // for playClick audio purposes
 const questionContainer = document.getElementById("question-container") // fix for "question-container" little black box issue
@@ -51,6 +53,7 @@ function startTimer() {
   countdown.style.display = ''
   countdown.style.margin = '10px'
   countdown.style.padding = '20px'
+  btnReset.style.display = ''
 }
 function updateTimer() {
   countdown.textContent = `Time remaining: ${timerSeconds}s`
@@ -193,6 +196,7 @@ function resetGame(){
   countdown.style.display = 'none'
   questionContainer.style.display = 'none' // fix for "question-container" little black box issue
   playerScoreContainer.style.display = 'none'
+  btnReset.style.display = 'none'
   countdown.textContent = ``
   question.textContent = '' // this line isnt needed?
   answers.innerHTML = ''
