@@ -1,23 +1,21 @@
-# BE A GREAT HUMAN - THE QUIZ
+# BE A GREAT HUMAN - THE QUIZZENING
 ## “Get through life without looking dumb (or dying)”
-
-readme update test
 
 ![screenshot here eventually](https://dietmartemps.com/media_library/image/28928_1374416277166.jpg)
 
-What kind of footprint do you leave on the world? What impact do you have on the people around you? Do you know how to deal with emergency situations? Being a good person doesn't have to be a pretentious sweater you show off - all it takes is paying attention to the little details in life.<br>
+What kind of footprint do you leave on the world? What impact do you have on the people around you? Do you know how to deal with emergency situations? Being a good person doesn't have to be like wearing a neon yellow sweater you show off to the world - all it takes is paying attention to the little details in life.<br>
 The goal is simple - choose a category and answer questions. Each question will have multiple choice answers, and after selecting your answer you will receive points - or not! At the end of a category you will see your total score and learn how close you are to being a "perfect person". (FYI - no such thing.)
 
 # [PLAY GAME!](https://quiz-beagreathuman.netlify.app/)
 
+## :desktop_computer:	Technologies used 
 
-## Technologies used 
+- ![HTML5](https://img.shields.io/badge/html5-%23E34F26.svg?style=for-the-badge&logo=html5&logoColor=white)
+- ![CSS3](https://img.shields.io/badge/css3-%231572B6.svg?style=for-the-badge&logo=css3&logoColor=white)
+- ![JavaScript](https://img.shields.io/badge/javascript-%23323330.svg?style=for-the-badge&logo=javascript&logoColor=%23F7DF1E)
+- ![Git](https://img.shields.io/badge/git-%23F05033.svg?style=for-the-badge&logo=git&logoColor=white)
 
-- HTML
-- CSS
-- Javascript
-
-## Credits
+## :handshake:	Credits
 
 - [Sitepoint](https://www.sitepoint.com/simple-javascript-quiz/) - helped me decide how to store data
 - [Flaticon](https://www.flaticon.com/) - favicon
@@ -27,17 +25,18 @@ The goal is simple - choose a category and answer questions. Each question will 
 - [Justin Abene](https://github.com/jmca) - 2 pieces of music for game succeed or fail
 - [Google Fonts](https://fonts.google.com/specimen/Marmelad) - Marmelad font
 
-## Planning Materials
+## :brain:	Planning Materials
 - [Google Document](https://docs.google.com/document/d/113u75inesnjXXG_PjuJ-9mHIlA8qXYocUYC1vlsqJ4E/edit?usp=drive_link)
 
-## Basic Improvements (a.k.a. not quite Ice Box)
+## :wrench:	Basic Improvements (a.k.a. not quite Ice Box)
 
-- change timer to display mins:seconds instead of only seconds
-- add more questions & more categories
-- 
+- Change timer to display mins:seconds, rather than seconds only
+- Add more questions & more categories
+- Improve Flexbox layout
 
-## Ice Box Features
+## :ice_cube::boxing_glove: Ice Box Features 
 
-- Score handling complexity -> instead of only correct/incorrect, have a "maximum amount of points" for guessing correctly the first time, and subtract points for each incorrect guess
-- Category handling -> after finishing 1st category & seeing score, user can proceed to the other categories & keep updating their total score, rather than only re-starting
-- Secret page -> if user achieves perfect score, show a unique "super winner" page
+- Answer handling -> after player selects incorrect answer, pause on question, indicate which answer is correct (possibly with additional trivia/info), then click to move to next question
+- Score handling complexity -> instead of simply correct/incorrect, allow each question a "points maximum" for choosing correctly on first attempt, and subtract points for each incorrect guess
+- Category handling -> after finishing 1st category, player can maintain score and proceed on to other categories
+- Secret top-dawg page -> if player achieves perfect score, show a unique "super winner" page

@@ -38,10 +38,10 @@
 // // ** images: favicon to page DONE, monk image for top of page before game starts
 // // mouse pointer, li mouse selects whole thing
 // // README! can use "badges" for technology used & credits (inside Course SUpplements > GitHub Beautifuication (2nd link has nicer looking ones)
-// .gitignore or .env for dead code!
+// // .gitignore or .env for dead code!
 
-// FIX THT LITTLE BLACK BOX ISUE!! SO CLOSE!!
-// min-width on big container for short questions
+// // FIX THT LITTLE BLACK BOX ISUE!! SO CLOSE!!
+// // min-width on big container for short questions
 
 CIRCLE BACK IF IM MENTALLY ABLE TO:
 -button styles & hover
