@@ -21,7 +21,7 @@ const btnCategory3 = document.getElementById("btn-category-3")
 const question = document.getElementById("question-p")
 const answers = document.getElementById("answers-ul")
 const btnReset = document.getElementById("btn-reset")
-const rulesBtnDiv = document.getElementById("rules-btn-container")
+const rulesBtnsDiv = document.getElementById("rules-btns-container")
 const btnContainer = document.getElementById("buttons-container") // for playClick audio purposes only
 const playerScoreContainer = document.getElementById("player-score")
 let initialScoreState = playerScoreContainer.innerHTML = `score`
@@ -62,7 +62,7 @@ function stopTimer() {
 }
 
 function renderQuestionCat1() {
-  rulesBtnDiv.style.display = 'none'
+  rulesBtnsDiv.style.display = 'none'
   currentCategory = 1 // to fix problem at end of playerChooseAnswer
   let singleQuestion = questionsCat1[currentQuesIdx]    //HOLDS ONE SPECIFIC QUESTION:
   question.textContent = `${singleQuestion.quesQ}`
@@ -79,7 +79,7 @@ function renderQuestionCat1() {
   })
 }
 function renderQuestionCat2() {
-  rulesBtnDiv.style.display = 'none'
+  rulesBtnsDiv.style.display = 'none'
   currentCategory = 2
   let singleQuestion = questionsCat2[currentQuesIdx] 
   question.textContent = `${singleQuestion.quesQ}`
@@ -95,7 +95,7 @@ function renderQuestionCat2() {
   })
 }
 function renderQuestionCat3() {
-  rulesBtnDiv.style.display = 'none'
+  rulesBtnsDiv.style.display = 'none'
   currentCategory = 3
   let singleQuestion = questionsCat3[currentQuesIdx]
   question.textContent = `${singleQuestion.quesQ}`
@@ -173,11 +173,10 @@ function roundOver(){
 }
 
 
-
 function resetGame(){
   gameAudio.stopAudio()
   gameAudio.playClick()
-  rulesBtnDiv.style.display = ''
+  rulesBtnsDiv.style.display = ''
   playerScoreContainer.innerHTML = initialScoreState;
   countdown.textContent = ``
   question.textContent = '' // this line isnt needed?

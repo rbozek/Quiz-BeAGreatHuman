@@ -31,14 +31,22 @@
 // // -Check playerScore!! might be a little wonky
 
 // // timer for entire category, not each question
-// ** sounds: sound for button clicks, add sound for playerScore, and diff sound for perfect score  ->  button to turn off sounds??
+// // ** sounds: sound for button clicks, add sound for playerScore, and diff sound for perfect score  ->  button to turn off sounds??
+
+// fonts! (quick)
 // ** images: favicon to page DONE, monk image for top of page before game starts
-// color scheme: warm colors
+    // Put rules & category buttons on top of meditate image
+    // flexbox layout adjust!
+    // have score, timer, and reset game buttons appear once game starts
+
+// README!
+
+
 
 // IF I HAVE TIME
 // clearing Q's and A's - diditn mess with it for fear of breaking it - but see if i can display.none instead of innerHTML (but might make a mess with reest? idk)
-// seaprate "rules" & "buttons" - when user starts, everything disappears, but after a reset, only buttons re-appear
-// perfect score make more exciting - if player perfect score, hidden image or page
+// // seaprate "rules" & "buttons" - when user starts, everything disappears, but after a reset, only buttons re-appear
+// perfect score make more exciting - if player perfect score, hidden image or page!
 
 
 
