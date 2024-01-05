@@ -44,23 +44,24 @@ div#rules-div {
 }
 
 div#question-container {
-  background-color:  rgb(17, 65, 0);
+  background-color:  rgb(0, 0, 0);
+  border-radius: 10px;
   max-width: 450px;
 }
 
 p#question-p{
-  color: #fff;
+  color: rgb(209, 182, 1);
   font-weight: bold;
 }
-ul#answers-ul{
-  color: #fff;
-  margin: 0;
-  padding: 0;
+ul{
+  color: rgb(209, 182, 1);
+  margin: 10px;
+  padding: 10px;
 }
 li {
   display: block;
   list-style-type: none;
-  background-color: #fff;
+  background-color: rgb(209, 182, 1);
   margin: 0 20px 10px 20px;
   padding: 4px;
   color: rgb(0, 0, 0);
@@ -70,19 +71,25 @@ li {
   /* border: none; */
   /* border-radius: 5px; */
 }
-
 li:hover {
-  background-color: rgb(19, 19, 19); 
-  color: rgb(255, 253, 253);
+  background-color: rgb(0, 0, 0); 
+  color: rgb(209, 182, 1);
 }
 
 div#countdown {
-  background-color: rgb(255, 160, 66);
+  background-color: rgb(255, 137, 19);
+  /* margin: 10px 0 10px 0;
+  padding: 20px; */
+  border-radius: 10px;
+  font-size: 20px;
 }
 
 div#player-score {
-  background-color: rgb(66, 255, 211);
-}
+  background-color: rgb(255, 137, 19);
+  /* margin: 10px 0 10px 0;
+  padding: 20px; */
+  border-radius: 10px;
+  font-size: 20px; }
 
 button {
   display: inline-block;
@@ -95,4 +102,8 @@ button {
   border: none;
   border-radius: 5px;
   /* transition: background-color 0.3s ease; */
+}
+
+#btn-reset {
+  margin-top: 30px;
 }

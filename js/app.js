@@ -22,11 +22,14 @@ const question = document.getElementById("question-p")
 const answers = document.getElementById("answers-ul")
 const btnReset = document.getElementById("btn-reset")
 const rulesBtnsDiv = document.getElementById("rules-btns-container")
-const btnContainer = document.getElementById("buttons-container") // for playClick audio purposes only
-const playerScoreContainer = document.getElementById("player-score")
-let initialScoreState = playerScoreContainer.innerHTML = `score`
-const countdown = document.getElementById("countdown")  // TIMER
+const btnContainer = document.getElementById("buttons-container") // for playClick audio purposes, and the questionContainer style.display issues?
+// const questionContainer = document.getElementById("question-container") // for clearing little black box
+// questionContainer.style.display = 'none'
 
+const playerScoreContainer = document.getElementById("player-score")
+let initialScoreState = playerScoreContainer.innerHTML = ``
+const countdown = document.getElementById("countdown")  // TIMER
+countdown.style.display = 'none'
 
 /*--------- Event Listeners ---------*/
 btnCategory1.addEventListener('click', renderQuestionCat1)
@@ -41,11 +44,17 @@ btnReset.addEventListener('click', resetGame)
 
 /*------------ Functions ------------*/
 function startTimer() {
+  btnCategory3.addEventListener('click', startTimer)
+
+  countdown.style.display = ''
+  countdown.style.margin = '10px'
+  countdown.style.padding = '20px'
+
   timerSeconds = 80
   timerInterval = setInterval(updateTimer, 1000)
 }
 function updateTimer() {
-  countdown.textContent = `Time: ${timerSeconds}s`
+  countdown.textContent = `Time remaining: ${timerSeconds}s`
   timerSeconds -= 1
   if (timerSeconds < 0) {
     countdown.textContent = `Out of time!`
@@ -156,7 +165,9 @@ function playerChooseAnswer(evt){
 function roundOver(){
   // console.log('testing gameover state');
   stopTimer()
-  countdown.textContent = ``
+  // countdown.textContent = ``
+  countdown.style.display = 'none'
+  // questionContainer.style.display = 'none'
   if (playerScore >= 5) {
     gameAudio.playLevelSucceed()
     playerScoreContainer.innerHTML = `Your score is:<br> ${ playerScore }<br>Perfect. You are an evolved human.`
@@ -175,6 +186,8 @@ function resetGame(){
   gameAudio.playClick()
   stopTimer()
   rulesBtnsDiv.style.display = ''
+  countdown.style.display = 'none'
+  // questionContainer.style.display = 'none'
   playerScoreContainer.innerHTML = initialScoreState;
   countdown.textContent = ``
   question.textContent = '' // this line isnt needed?
