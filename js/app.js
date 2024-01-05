@@ -22,9 +22,9 @@ const question = document.getElementById("question-p")
 const answers = document.getElementById("answers-ul")
 const btnReset = document.getElementById("btn-reset")
 const rulesBtnsDiv = document.getElementById("rules-btns-container")
-const btnContainer = document.getElementById("buttons-container") // for playClick audio purposes, and the questionContainer style.display issues?
-// const questionContainer = document.getElementById("question-container") // for clearing little black box
-// questionContainer.style.display = 'none'
+const btnContainer = document.getElementById("buttons-container") // for playClick audio purposes
+const questionContainer = document.getElementById("question-container") // fix for "question-container" little black box issue
+
 
 const playerScoreContainer = document.getElementById("player-score")
 let initialScoreState = playerScoreContainer.innerHTML = ``
@@ -67,6 +67,7 @@ function stopTimer() {
 
 function renderQuestionCat1() {
   rulesBtnsDiv.style.display = 'none'
+  questionContainer.style.display = 'block'  // fix for "question-container" little black box issue
   currentCategory = 1 // to fix problem at end of playerChooseAnswer
   let singleQuestion = questionsCat1[currentQuesIdx]    //HOLDS ONE SPECIFIC QUESTION:
   question.textContent = `${singleQuestion.quesQ}`
@@ -84,6 +85,7 @@ function renderQuestionCat1() {
 }
 function renderQuestionCat2() {
   rulesBtnsDiv.style.display = 'none'
+  questionContainer.style.display = 'block'  // fix for "question-container" little black box issue
   currentCategory = 2
   let singleQuestion = questionsCat2[currentQuesIdx] 
   question.textContent = `${singleQuestion.quesQ}`
@@ -100,6 +102,7 @@ function renderQuestionCat2() {
 }
 function renderQuestionCat3() {
   rulesBtnsDiv.style.display = 'none'
+  questionContainer.style.display = 'block'  // fix for "question-container" little black box issue
   currentCategory = 3
   let singleQuestion = questionsCat3[currentQuesIdx]
   question.textContent = `${singleQuestion.quesQ}`
@@ -165,7 +168,7 @@ function roundOver(){
   stopTimer()
   // countdown.textContent = ``
   countdown.style.display = 'none'
-  // questionContainer.style.display = 'none'
+  questionContainer.style.display = 'none' // fix for "question-container" little black box issue
   if (playerScore >= 5) {
     gameAudio.playLevelSucceed()
     playerScoreContainer.innerHTML = `Your score is:<br> ${ playerScore }<br>Perfect. You are an evolved human.`
@@ -185,8 +188,8 @@ function resetGame(){
   stopTimer()
   rulesBtnsDiv.style.display = ''
   countdown.style.display = 'none'
-  // questionContainer.style.display = 'none'
-  playerScoreContainer.innerHTML = initialScoreState;
+  questionContainer.style.display = 'none' // fix for "question-container" little black box issue
+  playerScoreContainer.innerHTML = initialScoreState
   countdown.textContent = ``
   question.textContent = '' // this line isnt needed?
   answers.innerHTML = ''
@@ -195,4 +198,3 @@ function resetGame(){
   console.log(playerScore, currentQuesIdx);
   console.log('resetting game');
 }
-

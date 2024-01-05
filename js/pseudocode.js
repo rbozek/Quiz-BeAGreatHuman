@@ -41,6 +41,7 @@
 // .gitignore or .env for dead code!
 
 FIX THT LITTLE BLACK BOX ISUE!! SO CLOSE!!
+min-width on big container for short questions
 
 CIRCLE BACK IF IM MENTALLY ABLE TO:
 -button styles & hover

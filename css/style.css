@@ -45,6 +45,7 @@ div#rules-div {
 }
 
 div#question-container {
+  display: none;
   background-color:  rgb(0, 0, 0);
   border-radius: 10px;
   max-width: 450px;
