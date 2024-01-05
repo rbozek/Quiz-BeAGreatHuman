@@ -27,7 +27,8 @@ const questionContainer = document.getElementById("question-container") // fix f
 
 
 const playerScoreContainer = document.getElementById("player-score")
-let initialScoreState = playerScoreContainer.innerHTML = ``
+// let initialScoreState = playerScoreContainer.innerHTML = ``
+playerScoreContainer.style.display = 'none'
 const countdown = document.getElementById("countdown")  // TIMER
 countdown.style.display = 'none'
 
@@ -129,8 +130,10 @@ function playerChooseAnswer(evt){
     gameAudio.playPianoWrong()
     // console.log('incorrect answer selected');
   }
-
+  playerScoreContainer.style.display = ''
   playerScoreContainer.innerHTML = `Your score:<br>${ playerScore }`
+  playerScoreContainer.style.margin = '10px'
+  playerScoreContainer.style.padding = '20px'
 
   if (
     (currentCategory === 1 && currentQuesIdx < questionsCat1.length) ||
@@ -189,7 +192,7 @@ function resetGame(){
   rulesBtnsDiv.style.display = ''
   countdown.style.display = 'none'
   questionContainer.style.display = 'none' // fix for "question-container" little black box issue
-  playerScoreContainer.innerHTML = initialScoreState
+  playerScoreContainer.style.display = 'none'
   countdown.textContent = ``
   question.textContent = '' // this line isnt needed?
   answers.innerHTML = ''
