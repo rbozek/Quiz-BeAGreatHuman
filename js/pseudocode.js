@@ -39,8 +39,8 @@
     // flexbox layout adjust!
     // have score, timer, and reset game buttons appear once game starts
 
-// README!
-
+// README! can use "badges" for technology used & credits (inside Course SUpplements > GitHub Beautifuication (2nd link has nicer looking ones)
+// .gitignore or .env for dead code!
 
 
 // IF I HAVE TIME
