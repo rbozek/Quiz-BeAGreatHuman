@@ -33,12 +33,13 @@
 // // timer for entire category, not each question
 // // ** sounds: sound for button clicks, add sound for playerScore, and diff sound for perfect score  ->  button to turn off sounds??
 
-// fix timer issue!
+// // fix timer issue!
 // fonts! (quick)
 // ** images: favicon to page DONE, monk image for top of page before game starts
     // Put rules & category buttons on top of meditate image
     // flexbox layout adjust!
     // have score, timer, and reset game buttons appear once game starts
+  // mouse pointer, li mouse selects whole thing
 
 // README! can use "badges" for technology used & credits (inside Course SUpplements > GitHub Beautifuication (2nd link has nicer looking ones)
 // .gitignore or .env for dead code!
